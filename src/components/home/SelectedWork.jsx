@@ -78,7 +78,7 @@ const SelectedWork = () => {
     };
 
     return (
-        <div className='py-12 md:py-24 space-y-5 md:space-y-16 '>
+        <div className='py-12 md:py-24 '>
             <div
                 ref={marqueeRef}
                 className="fixed top-0 left-0 pointer-events-none z-[999] w-0 opacity-0 text-white uppercase aeonik text-xs bg-[#4688F0] px-0 py-1 will-change-transform overflow-hidden"
@@ -89,13 +89,14 @@ const SelectedWork = () => {
                     </p>
                 </Marquee>
             </div>
+            <div className="space-y-5 md:space-y-16">
             <SectionHeading
                 btnText="Selected work"
                 heading="Brands we have backed."
-                desc={<>
-                <p>Capital and celebrity, structured as a single move.  Strategic advisory anchored to talent. A full-stack engagement that compounds.</p></>} />
+                desc={<><p>Capital and celebrity, structured as a single move.  Strategic advisory anchored to talent. A full-stack engagement that compounds.</p></>}
+            />
             <div className="container grid md:grid-cols-2 gap-x-5 gap-y-10">
-                {WorkData.map((item, i) => (
+                {WorkData.slice(0,4).map((item, i) => (
                     <Link onMouseEnter={(e) => handleMouseEnter(e, item.title)}
                         onMouseMove={handleMouseMove}
                         onMouseLeave={handleMouseLeave} key={i} href={`/work/${item.slug}`} className=" w-full space-y-4 group cursor-pointer">
@@ -110,6 +111,13 @@ const SelectedWork = () => {
                         </div>
                     </Link>
                 ))}
+            </div>
+            </div>
+
+            <div className="w-full mt-12 center">
+                 <Link href={"/work"} className={`  bg-[#4688F0] block w-fit  text-[#FFFFFF] uppercase aeonik text-sm px-4 border rounded-sm hover:text-[#4688F0] border-transparent hover:border-[#4688F0] hover:bg-transparent py-2.5 leading-none relative overflow-hidden  transition-all duration-300 `}>
+                  View More
+                </Link>
             </div>
         </div>
     )

@@ -119,7 +119,8 @@ export const WorksList = () => {
                         onMouseLeave={handleMouseLeave}
                         href={`/work/${item.slug}`} key={i} className={`proj_paren w-full  aspect-square md:aspect-video center text-white relative overflow-hidden ${item.classname}`}>
 
-                        <Image fill src={item.image} className={` proj_img cover scale-50`} alt="" />
+                    
+                        <Image width={400} height={500}  src={item.image} className={` proj_img `} alt="" />
                         <h3
                             className="md:font-semibold mix-blend-difference  absolute bottom-5 leading-none md:bottom-20 z-10 uppercase text-center"
                         >

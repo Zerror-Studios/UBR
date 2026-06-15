@@ -106,19 +106,15 @@ const Hero = () => {
       transform: "translateY(-100%)",
       ease: "in-out-quint",
     }, "<")
-    tl.to(".load_clip_paren", {
-      opacity: 1,
-      ease: "in-out-quint",
-    })
     tl.to(".load_clip_paren_1", {
-      y: 6,
-      x: -5,
-      duration: 0.5,
-      ease: "in-out-quint",
-    })
-    tl.to(".load_clip_paren_2", {
       y: -6,
       x: 5,
+      duration: 0.5,
+      ease: "in-out-quint",
+    }, "<")
+    tl.to(".load_clip_paren_2", {
+      y: 6,
+      x: -5,
       duration: 0.5,
       ease: "in-out-quint",
     }, "<")
@@ -223,17 +219,17 @@ const Hero = () => {
     <>
       {!isMobile && (
         <>
-          <div className="  w-full fixed top-0 left-0 z-[100]  h-screen center  overflow-hidden pointer-events-none">
-            <div className="absolute">
-              <div className=' text-6xl  lg:text-8xl leading-none block overflow-hidden font-semibold diagramm'> <p className='translate-y-full itx_1'>ubr</p></div>
-              <div className=' text-6xl  lg:text-8xl leading-none block overflow-hidden uppercase font-semibold diagramm'> <p className='-translate-y-full itx_2'>Disrptve</p> </div>
+          <div className=" hidden  md:flex justify-center items-center w-full fixed top-0 left-0 z-[100]  h-screen   overflow-hidden pointer-events-none">
+            <div className="absolute translate-x-40">
+              <div className=' text-5xl  leading-none block overflow-hidden font-semibold diagramm'> <p className='translate-y-full itx_1'>ubr</p></div>
+              <div className=' text-5xl  leading-none block overflow-hidden uppercase font-semibold diagramm'> <p className='-translate-y-full itx_2'>Disrptve</p> </div>
             </div>
-            <div className="  h-[0%]  load_clip_paren_1 load_clip_paren opacity-0">
-              <div style={{ clipPath: "polygon(0 0, 0% 100%, 90% 0)" }} className="size-14 clip_rd -translate-y-7 translate-x-1/2 shrink-0 bg-[#d70000]"></div>
+            <div className="  h-[0%]  load_clip_paren_1 load_clip_paren ">
+              <div style={{ clipPath: "polygon(0 0, 0% 100%, 90% 0)" }} className="size-18 clip_rd -translate-y-9 translate-x-1/2 shrink-0 bg-[#d80000]"></div>
             </div>
             <div className="w-[0%] shrink-0 load_clip_vid  h-[0%] "></div>
-            <div className=" h-[0%]  load_clip_paren_2 load_clip_paren opacity-0 flex w-14 justify-end items-end">
-              <div style={{ clipPath: "polygon(100% 0, 10% 100%, 100% 100%)" }} className="size-14 clip_rd translate-y-7 -translate-x-1/2 shrink-0 bg-[#d70000]"></div>
+            <div className=" h-[0%]  load_clip_paren_2 load_clip_paren  flex w-18 justify-end items-end">
+              <div style={{ clipPath: "polygon(100% 0, 10% 100%, 100% 100%)" }} className="size-18 clip_rd translate-y-9 -translate-x-1/2 shrink-0 bg-[#d70000]"></div>
             </div>
           </div>
 
@@ -282,7 +278,7 @@ const Hero = () => {
                   <div className="col-span-4">
                     <p className="md:text-xl paragraph_split mb-2   ">The integrated model  for    non-linear growth.</p>
 
-                    <h1 className=' max-sm:mb-5 max-sm:mt-2 max-sm:hidden   leading-12 lg:leading-20 tracking-tighter heading_split '>Built for Entrepreneurs <br /> chasing meaningful outcomes.</h1>
+                    <h1 className=' max-sm:mb-5 max-sm:mt-2 max-sm:hidden  leading-none tracking-tighter heading_split '>Built for Entrepreneurs <br /> chasing meaningful outcomes.</h1>
                     <h1 className=' max-sm:mb-5 max-sm:mt-2 md:hidden   leading-none tracking-tighter heading_split '>Built for Entrepreneurs chasing meaningful outcomes.</h1>
                   </div>
                   <div className=" pb-4 text-left md:text-right flex md:justify-end pointer-events-none relative z-10 w-full col-span-2">

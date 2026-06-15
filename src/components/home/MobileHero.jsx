@@ -98,33 +98,29 @@ const MobileHero = () => {
             delay: 0
         })
         tl.to([".itx_1", ".itx_2"], {
-            transform: "translateY(0)",
-            ease: "in-out-quint",
-        })
-        tl.to(".itx_1", {
-            transform: "translateY(100%)",
-            ease: "in-out-quint",
-        }, ">+=0.25")
-        tl.to(".itx_2", {
-            transform: "translateY(-100%)",
-            ease: "in-out-quint",
-        }, "<")
-        tl.to(".load_clip_paren", {
-            opacity: 1,
-            ease: "in-out-quint",
-        })
-        tl.to(".load_clip_paren_1", {
-            y: 6,
-            x: -5,
-            duration: 0.5,
-            ease: "in-out-quint",
-        })
-        tl.to(".load_clip_paren_2", {
-            y: -6,
-            x: 5,
-            duration: 0.5,
-            ease: "in-out-quint",
-        }, "<")
+      transform: "translateY(0)",
+      ease: "in-out-quint",
+    })
+    tl.to(".itx_1", {
+      transform: "translateY(100%)",
+      ease: "in-out-quint",
+    }, ">+=0.25")
+    tl.to(".itx_2", {
+      transform: "translateY(-100%)",
+      ease: "in-out-quint",
+    }, "<")
+    tl.to(".load_clip_paren_1", {
+      y: -6,
+      x: 5,
+      duration: 0.5,
+      ease: "in-out-quint",
+    }, "<")
+    tl.to(".load_clip_paren_2", {
+      y: 6,
+      x: -5,
+      duration: 0.5,
+      ease: "in-out-quint",
+    }, "<")
         tl.to(".load_clip_vid", {
             height: "100%",
             width: "100vw",
@@ -164,17 +160,17 @@ const MobileHero = () => {
         <>
             {isMobile && (
                 <>
-                    <div className="  w-full fixed top-0 left-0 z-[100]  h-screen center  overflow-hidden pointer-events-none">
-                        <div className="absolute">
-                            <div className=' text-5xl  lg:text-8xl leading-none block overflow-hidden font-semibold diagramm'> <p className='translate-y-full itx_1'>ubr</p></div>
-                            <div className=' text-5xl  lg:text-8xl leading-none block overflow-hidden uppercase font-semibold diagramm'> <p className='-translate-y-full itx_2'>Disrptve</p> </div>
+                    <div className=" md:hidden  w-full fixed top-0 left-0 z-[100]  h-screen center  overflow-hidden pointer-events-none">
+                        <div className="absolute translate-x-26">
+                            <div className=' text-3xl  leading-none block overflow-hidden font-semibold diagramm'> <p className='translate-y-full itx_1'>ubr</p></div>
+                            <div className=' text-3xl  leading-none block overflow-hidden uppercase font-semibold diagramm'> <p className='-translate-y-full itx_2'>Disrptve</p> </div>
                         </div>
-                        <div className="  h-[0%]  load_clip_paren_1 load_clip_paren opacity-0">
-                            <div style={{ clipPath: "polygon(0 0, 0% 100%, 90% 0)" }} className="size-14 clip_rd -translate-y-7 translate-x-1/2 shrink-0 bg-[#d70000]"></div>
+                        <div className="  h-[0%]  load_clip_paren_1 load_clip_paren ">
+                            <div style={{ clipPath: "polygon(0 0, 0% 100%, 90% 0)" }} className="size-12 clip_rd -translate-y-6 translate-x-1/2 shrink-0 bg-[#d80000]"></div>
                         </div>
                         <div className="w-[0%] shrink-0 load_clip_vid  h-[0%] "></div>
-                        <div className=" h-[0%]  load_clip_paren_2 load_clip_paren opacity-0 flex w-14 justify-end items-end">
-                            <div style={{ clipPath: "polygon(100% 0, 10% 100%, 100% 100%)" }} className="size-14 clip_rd translate-y-7 -translate-x-1/2 shrink-0 bg-[#d70000]"></div>
+                        <div className=" h-[0%]  load_clip_paren_2 load_clip_paren  flex w-12 justify-end items-end">
+                            <div style={{ clipPath: "polygon(100% 0, 10% 100%, 100% 100%)" }} className="size-12 clip_rd translate-y-6 -translate-x-1/2 shrink-0 bg-[#d70000]"></div>
                         </div>
                     </div>
                     <div className='story_wrapper relative '>
@@ -185,7 +181,7 @@ const MobileHero = () => {
                             <div className="video_section mx-auto container opacity-0  aspect-video rounded-xl overflow-hidden">
                                 <video src="/videos/hero_video.mp4" loop autoPlay muted playsInline className='cover rounded-xl'></video>
                             </div>
-                            <div className=' hero_content mt-12 opacity-0 padding flex items-end '>
+                            <div className=' hero_content mt-10 opacity-0 padding flex items-end '>
 
                                 <div className="pointer-events-none w-full  relative z-10 md:grid items-end grid-cols-6">
                                     <div className="col-span-4">
