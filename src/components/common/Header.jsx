@@ -34,7 +34,8 @@ const Header = () => {
   const [isOpen, setOpen] = useState(false)
   const pathname = usePathname();
 
-  useGSAP(() => {
+  useEffect(() => {
+    gsap.set(".header", { opacity: 0 })
     if (pathname === "/") {
       gsap.to(".header", {
         opacity: 1,
@@ -46,7 +47,9 @@ const Header = () => {
         delay: 1
       })
     }
+  }, [pathname])
 
+  useGSAP(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".header",
@@ -59,26 +62,12 @@ const Header = () => {
       duration: .6,
       ease: "expo.out",
     });
-    tl.to('.logo_black', {
-      opacity: 1,
-      duration: .6,
-    }, 0);
-    tl.to('.logo_white', {
-      opacity: 0,
-      duration: .6,
-    }, 0);
     tl.to('.navLink', {
-      color: "black",
-      fontWeight: 1000,
+      color: "white",
       duration: .6,
     }, 0);
     tl.to('.navLinkBar', {
-      backgroundColor: "#000000",
-      duration: .6,
-    }, 0);
-    tl.to('.btn_paren', {
-      backgroundColor: "transparent",
-      color: "white",
+      backgroundColor: "#ffffff",
       duration: .6,
     }, 0);
   })
@@ -123,7 +112,7 @@ const Header = () => {
 
 
   return (
-    <div className='header opacity-0 w-full  z-100 fixed'>
+    <div className='header opacity-0 w-full  z-100 fixed '>
 
       <div className=" mobile_menu md:hidden center text-center w-full h-screen bg-[#4688F0]  text-white z-[10] fixed -right-full top-0">
         <div className=" gap-y-7 flex flex-col justify-center items-center">
@@ -141,12 +130,11 @@ const Header = () => {
         </div>
       </div>
 
-      <div className={` header_bg absolute bg-[#FFFFFF] pointer-events-none z-[-1] w-full h-full left-0 -translate-y-full`}></div>
+      <div className={` header_bg absolute bg-[#4688F0] pointer-events-none z-[-1] w-full h-full left-0 -translate-y-full`}></div>
       <div className=" container py-0 md:py-3  flex items-center justify-between relative z-100   ">
-        <div className="flex items-end w-[75%] gap-x-20">
+        <div className="flex items-center w-[75%] gap-x-20">
           <Link href="/" className='block  w-fit relative'>
-            <img className={`w-20 logo_white   `} src="/logo_white.png" alt="logo" />
-            <img className='w-20 logo_black absolute inset-0  ' src="/logo_black.png" alt="logo" />
+            <img className='w-24 logo_black' src="/logo.png" alt="logo" />
           </Link>
           <div className="max-sm:hidden flex items-center gap-x-5">
             {navLinks.map((link, i) => {
@@ -160,7 +148,7 @@ const Header = () => {
                     <span
                       className={`
                         navLinkBar
-                        bg-black
+                        bg-[#000000]
               absolute left-0 bottom-0 h-[1.5px] rounded-full w-full
               transition-transform duration-300 ease-out
               ${isActive ? "scale-x-100 origin-left" : "scale-x-0 origin-left group-hover:scale-x-100"}
@@ -174,8 +162,8 @@ const Header = () => {
         </div>
         <div className="md:w-[25%] flex items-center justify-end">
           <Link href={"/contact"} onClick={() => setOpen(false)}>
-            <button className={` btn_paren diagramm whitespace-nowrap text-xs md:text-sm uppercase group block w-fit  bg-white  px-2 md:px-4 border hover:text-[#000000]! lg:border-transparent hover:border-[#000000] hover:bg-[#FFFFFF] py-2 max-sm:pb-1.5 md:py-2.5 relative overflow-hidden rounded-md  transition-border duration-300 `}>
-              <span className='  absolute w-full h-full z-[-1] bg-[#4688F0]  inset-0 group-hover:-top-full transition-all duration-300'></span>
+            <button className={` btn_paren diagramm whitespace-nowrap text-xs md:text-sm uppercase group block w-fit  bg-white  px-2 md:px-4 border hover:text-[#ffffff]! lg:border-transparent hover:border-[#ffffff] hover:bg-transparent py-2 max-sm:pb-1.5 md:py-2.5 relative overflow-hidden rounded-md  transition-border duration-300 `}>
+              <span className='  absolute w-full h-full z-[-1] bg-[#ffffff]  inset-0 group-hover:-top-full transition-all duration-300'></span>
               Get in Touch
             </button>
           </Link>

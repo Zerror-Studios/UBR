@@ -94,16 +94,18 @@ const Hero = () => {
     const tl = gsap.timeline({
       delay: 0
     })
-    tl.to(".itx_1", {
+    tl.to([".itx_1", ".itx_2"], {
       transform: "translateY(0)",
-      stagger: 0.05,
       ease: "in-out-quint",
     })
     tl.to(".itx_1", {
-      transform: "translateY(-100%)",
-      stagger: 0.05,
+      transform: "translateY(100%)",
       ease: "in-out-quint",
-    })
+    }, ">+=0.25")
+    tl.to(".itx_2", {
+      transform: "translateY(-100%)",
+      ease: "in-out-quint",
+    }, "<")
     tl.to(".load_clip_paren", {
       opacity: 1,
       ease: "in-out-quint",
@@ -222,10 +224,9 @@ const Hero = () => {
       {!isMobile && (
         <>
           <div className="  w-full fixed top-0 left-0 z-[100]  h-screen center  overflow-hidden pointer-events-none">
-            <div className="absolute flex">
-              <div className=' text-6xl  lg:text-8xl leading-none block overflow-hidden font-black'> <p className='translate-y-full itx_1'>u</p></div>
-              <div className=' text-6xl  lg:text-8xl leading-none block overflow-hidden font-black'> <p className='translate-y-full itx_1'>b</p> </div>
-              <div className=' text-6xl  lg:text-8xl leading-none block overflow-hidden font-black'><p className='translate-y-full itx_1'>r</p></div>
+            <div className="absolute">
+              <div className=' text-6xl  lg:text-8xl leading-none block overflow-hidden font-semibold diagramm'> <p className='translate-y-full itx_1'>ubr</p></div>
+              <div className=' text-6xl  lg:text-8xl leading-none block overflow-hidden uppercase font-semibold diagramm'> <p className='-translate-y-full itx_2'>Disrptve</p> </div>
             </div>
             <div className="  h-[0%]  load_clip_paren_1 load_clip_paren opacity-0">
               <div style={{ clipPath: "polygon(0 0, 0% 100%, 90% 0)" }} className="size-14 clip_rd -translate-y-7 translate-x-1/2 shrink-0 bg-[#d70000]"></div>
@@ -235,6 +236,7 @@ const Hero = () => {
               <div style={{ clipPath: "polygon(100% 0, 10% 100%, 100% 100%)" }} className="size-14 clip_rd translate-y-7 -translate-x-1/2 shrink-0 bg-[#d70000]"></div>
             </div>
           </div>
+
           <div className='story_wrapper relative h-[300vh] md:h-[500vh]'>
 
 

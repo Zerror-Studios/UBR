@@ -164,7 +164,7 @@ const Footer = () => {
       <div className=" main_footer -translate-y-px bg-[#4688F0]  overflow-hidden w-full  text-[#FFFFFF]  pt-14">
         <div className="container h-[35vh]! grid   md:grid-cols-6">
           <div className="space-y-5 h-full  col-span-3">
-            <img className='w-[25%]' src="/logo_white.png" alt="img" />
+            <img className='w-[25%]' src="/logo.png" alt="img" />
           </div>
           <div className=" h-full space-y-5">
             <p className=' uppercase text-sm aeonik'>Sitemap</p>

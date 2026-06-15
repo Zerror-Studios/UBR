@@ -97,16 +97,18 @@ const MobileHero = () => {
         const tl = gsap.timeline({
             delay: 0
         })
-        tl.to(".itx_1", {
+        tl.to([".itx_1", ".itx_2"], {
             transform: "translateY(0)",
-            stagger: 0.05,
             ease: "in-out-quint",
         })
         tl.to(".itx_1", {
-            transform: "translateY(-100%)",
-            stagger: 0.05,
+            transform: "translateY(100%)",
             ease: "in-out-quint",
-        })
+        }, ">+=0.25")
+        tl.to(".itx_2", {
+            transform: "translateY(-100%)",
+            ease: "in-out-quint",
+        }, "<")
         tl.to(".load_clip_paren", {
             opacity: 1,
             ease: "in-out-quint",
@@ -163,10 +165,9 @@ const MobileHero = () => {
             {isMobile && (
                 <>
                     <div className="  w-full fixed top-0 left-0 z-[100]  h-screen center  overflow-hidden pointer-events-none">
-                        <div className="absolute flex">
-                            <div className=' text-6xl  lg:text-8xl leading-none block overflow-hidden font-black'> <p className='translate-y-full itx_1'>u</p></div>
-                            <div className=' text-6xl  lg:text-8xl leading-none block overflow-hidden font-black'> <p className='translate-y-full itx_1'>b</p> </div>
-                            <div className=' text-6xl  lg:text-8xl leading-none block overflow-hidden font-black'><p className='translate-y-full itx_1'>r</p></div>
+                        <div className="absolute">
+                            <div className=' text-5xl  lg:text-8xl leading-none block overflow-hidden font-semibold diagramm'> <p className='translate-y-full itx_1'>ubr</p></div>
+                            <div className=' text-5xl  lg:text-8xl leading-none block overflow-hidden uppercase font-semibold diagramm'> <p className='-translate-y-full itx_2'>Disrptve</p> </div>
                         </div>
                         <div className="  h-[0%]  load_clip_paren_1 load_clip_paren opacity-0">
                             <div style={{ clipPath: "polygon(0 0, 0% 100%, 90% 0)" }} className="size-14 clip_rd -translate-y-7 translate-x-1/2 shrink-0 bg-[#d70000]"></div>
@@ -204,7 +205,7 @@ const MobileHero = () => {
                                 className=" diagramm text-2xl lg:text-[4rem] font-semibold padding w-full md:w-[82%] text-center leading-tight text-white whitespace-normal"
                             >
                                 <span className='text-4xl'>UBR DISRPTVE</span> is a venture builder for consumer brands that want to <span className='highlight_white'> scale profitably.</span>
-                                 We back founders launching new ventures and operators reigniting
+                                We back founders launching new ventures and operators reigniting
                                 established ones.
                             </p>
                         </div>

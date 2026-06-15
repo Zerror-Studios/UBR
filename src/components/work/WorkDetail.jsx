@@ -257,13 +257,13 @@ const WorkDetail = () => {
           btnText="More work"
           heading="Other partnerships."
           desc="Capital, advisory and ambassador signings across beauty, fashion and sports." />
-        <div className="container grid grid-cols-1 md:grid-cols-3 gap-x-3 gap-y-10">
+        <div className="container grid grid-cols-1 md:grid-cols-3 gap-x-3 gap-y-5">
           {remainingWorks.map((item, i) => (
             <Link
               onMouseEnter={(e) => handleMouseEnter(e, item.title)}
               onMouseMove={handleMouseMove}
               onMouseLeave={handleMouseLeave}
-              key={i} href={`/work/${item.slug}`} className=" w-full space-y-4 group cursor-pointer ">
+              key={i} href={`/work/${item.slug}`} className=" w-full space-y-2 group cursor-pointer ">
               <div className={`w-full center aspect-4/3 overflow-hidden rounded-md  ${item.classname}`}>
                 <div data-img-effect className="w-full h-full center">
                   <img className=' max-sm:scale-50 md:group-hover:scale-110 transition-all duration-300' src={item.image} alt="img" />
