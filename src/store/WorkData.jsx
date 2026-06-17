@@ -66,28 +66,6 @@ export const WorkData = [
         classname: "bg-[#EBE2D9]",
     },
     {
-        id: 4,
-        title: "Sports Stadium",
-        slug: "sports-stadium",
-        description: "A full-stack engagement: capital first, then the ongoing work to make sure that capital compounds.",
-        engagement: "Fundraise + Brand Ambassador",
-        category: "Sports • Retail",
-        scope: "Long-term advisory",
-        services: [
-            "Capital",
-            "Strategy",
-            "brand",
-        ],
-        detailHeading: "Capital in the door. Then a long-term seat at the table.",
-        descArray: [
-            "A full-stack engagement: capital first, then the ongoing work to make sure that capital compounds.",
-            "For Sports Stadium, we acted as both fundraising partner and ongoing strategic advisor. We helped shape the investment thesis, brought the right investors to the table, and stayed on as advisors through the rollout.",
-            "The advisory work covers category positioning, brand architecture and growth strategy. Capital first, then the ongoing work to make sure that capital actually compounds.",
-        ],
-        image: "/images/work/brand-sports-stadium.png",
-        classname: "bg-[#000000]",
-    },
-    {
         id: 5,
         title: "Flaunt Your Ink",
         slug: "flaunt-your-ink",
@@ -96,7 +74,7 @@ export const WorkData = [
         category: "Beauty • Grooming",
         scope: "Active venture build",
         services: [
-            "Capital","talent","DISTRIBUTION",
+            "Capital", "talent", "DISTRIBUTION",
             "Strategy",
             "brand",
         ],
@@ -107,6 +85,25 @@ export const WorkData = [
         ],
         image: "/images/work/fyi.webp",
         classname: "bg-[#FFFCF0]",
+    },
+    {
+        id: 4,
+        title: "Aquatein",
+        slug: "",
+        description: "",
+        engagement: "",
+        category: "",
+        scope: "",
+        services: [
+            "Capital",
+            "Strategy",
+            "brand",
+        ],
+        detailHeading: "",
+        descArray: [
+        ],
+        image: "/images/work/aquatein.jpg",
+        classname: "bg-[#000000]",
     },
     {
         id: 6,
