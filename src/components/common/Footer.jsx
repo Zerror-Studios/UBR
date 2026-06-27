@@ -27,6 +27,10 @@ const navLinks = [
     label: "Team",
     href: "/team"
   },
+  {
+    label: "Terms and Conditions",
+    href: "/terms-and-conditions"
+  },
 ]
 const emails = [
   "binoykhimji@gmail.com",
