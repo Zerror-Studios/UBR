@@ -1,3 +1,4 @@
+"use client";
 import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 
@@ -62,7 +63,7 @@ void main() {
             float m1 = length(warped + sin(5.0 * warped.y * uFrequency - 3.0 * t + float(i)) / 4.0);
             float m = mix(m0, m1, kMix);
             float w = 1.0 - exp(-uBandWidth / exp(uBandWidth * m));
-            sumCol += uColors[i] * w;
+            sumCol = mix(sumCol, uColors[i], w);
             cover = max(cover, w);
       }
       col = clamp(sumCol, 0.0, 1.0);
