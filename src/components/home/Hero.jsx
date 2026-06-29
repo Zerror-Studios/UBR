@@ -278,7 +278,7 @@ const Hero = () => {
                 >
                   <video
                     className=" desk_clip_vid opacity-0  w-full h-full object-cover"
-                    ref={video1} autoPlay muted loop playsInline>
+                    ref={video2} autoPlay muted loop playsInline>
                     <source src="/videos/hero_video.mp4" />
                   </video>
                 </div>
