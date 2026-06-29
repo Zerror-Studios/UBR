@@ -1,12 +1,10 @@
 "use client"
 import React, { useEffect, useRef, useState } from 'react'
-import DotButton from '../common/DotButton'
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 import SplitText from 'gsap/dist/SplitText'
 import Image from 'next/image';
-import GradientBlinds from '../animation/GradientBlinds';
 import Aurora from '../animation/Aurora';
 gsap.registerPlugin(ScrollTrigger, SplitText)
 
@@ -107,23 +105,16 @@ const Hero = () => {
       transform: "translateY(-100%)",
       ease: "in-out-quint",
     }, "<")
-    tl.to(".desk_load_clip_paren_1", {
-      y: -4,
-      x: 3,
-      duration: 0.5,
-      ease: "in-out-quint",
+    tl.to(".shape_1", {
+      clipPath: "polygon(5% 0%, 100% 0%, 100% 0%, 5% 90%)",
+    })
+    tl.to(".shape_2", {
+      clipPath: "polygon(95% 10%, 95% 10%, 95% 100%, 0% 100%)",
     }, "<")
-    tl.to(".desk_load_clip_paren_2", {
-      y: 4,
-      x: -3,
-      duration: 0.5,
+    tl.to([".shape_1", ".shape_2"], {
+      scale: 1,
       ease: "in-out-quint",
-    }, "<")
-    tl.to(".desk_loader_paren", {
-      scale: 3.5,
-      duration: 1,
-      ease: "in-out-quint",
-    });
+    })
     tl.to(".desk_clip_vid", {
       opacity: 1,
     })
@@ -176,31 +167,26 @@ const Hero = () => {
       }
     })
     if (window.innerWidth > 750) {
+      tl.to([".shape_1"], {
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 100%)",
+        ease: "none",
+        duration: 0.05
+      });
+      tl.to([".shape_2"], {
+        clipPath: "polygon(100% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        ease: "none",
+        duration: 0.05
+      }, "<");
       tl.to(".hero_content", {
-        opacity: 0
+        opacity: 0,
       })
-      tl.to(".desk_loader_paren", {
-        scale: 25,
-        ease: "linear",
-      }, "<")
-      tl.to(".desk_clip_l1", {
-        duration:0.1,
-        clipPath: "polygon(0 0, 0% 100%, 100% 0)"
-      }, "<")
-      tl.to(".desk_clip_l2", {
-        duration:0.1,
-        clipPath: "polygon(100% 0%, 0% 100%, 100% 100%)"
-      }, "<")
-      tl.to(".desk_load_clip_paren_1", {
-        duration:0.1,
-        y: 0,
-        x: 0,
-      }, "<")
-      tl.to(".desk_load_clip_paren_2", {
-        duration:0.1,
-        y: 0,
-        x: 0,
-      }, "<")
+      tl.to([".shape_1", ".shape_2"], {
+        width: "100vw",
+        height: "100vh",
+        borderRadius: 0,
+        clipPath: "polygon(0% 0%,100% 0%,100% 100%,0% 100%)",
+        ease: "none",
+      }, "<");
     }
     tl.to(".over_txt", {
       top: "0%",
@@ -239,35 +225,45 @@ const Hero = () => {
             <div className=" sticky top-0   hero_section w-full h-screen perspective-[30rem] center  overflow-hidden  content_box ">
 
               <div className=" desk_loader_paren hidden   md:flex justify-center items-center w-full absolute top-0 left-0 z-[1]  h-screen   overflow-hidden pointer-events-none">
-                <div className="absolute translate-x-40">
+                <div className="absolute translate-x-44">
                   <div className=' text-5xl  leading-none block overflow-hidden font-semibold diagramm'> <p className='translate-y-full desk_itx_1'>ubr</p></div>
                   <div className=' text-5xl  leading-none block overflow-hidden uppercase font-semibold diagramm'> <p className='-translate-y-full desk_itx_2'>Disrptve</p> </div>
                 </div>
-                <div className="  h-[0%]  desk_load_clip_paren_1  ">
-                  <div style={{ clipPath: "polygon(0 0, 0% 95%, 95% 0)" }} className="size-18 clip_rd desk_clip_l1 -translate-y-9 translate-x-1/2 shrink-0 bg-[#d80000]">
-                    <video
-                      className=" desk_clip_vid opacity-0 w-full h-full object-cover"
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                    >
-                      <source src="/videos/hero_video.mp4" type="video/mp4" />
-                    </video>
-                  </div>
+                <div
+                  className=" shape_1 absolute scale-35 bg-[#d80000]"
+                  style={{
+                    width: "270px",
+                    aspectRatio: "6 / 5",
+                    clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 100%)",
+                  }}
+                >
+                  <video
+                    className=" desk_clip_vid opacity-0  w-full h-full object-cover"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                  >
+                    <source src="/videos/hero_video.mp4" type="video/mp4" />
+                  </video>
                 </div>
-                <div className=" h-[0%]  desk_load_clip_paren_2   flex w-18 justify-end items-end">
-                  <div style={{ clipPath: "polygon(100% 5%, 5% 100%, 100% 100%)" }} className="size-18 clip_rd desk_clip_l2 translate-y-9 -translate-x-1/2 shrink-0 bg-[#d70000]">
-                    <video
-                      className="desk_clip_vid opacity-0 w-full h-full object-cover"
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                    >
-                      <source src="/videos/hero_video.mp4" type="video/mp4" />
-                    </video>
-                  </div>
+                <div
+                  className="shape_2 absolute scale-35 bg-[#d80000]"
+                  style={{
+                    width: "270px",
+                    aspectRatio: "6 / 5",
+                    clipPath: "polygon(100% 0%, 100% 0%, 100% 100%, 0% 100%)",
+                  }}
+                >
+                  <video
+                    className=" desk_clip_vid opacity-0  w-full h-full object-cover"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                  >
+                    <source src="/videos/hero_video.mp4" type="video/mp4" />
+                  </video>
                 </div>
               </div>
 

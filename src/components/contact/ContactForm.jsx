@@ -177,7 +177,7 @@ const ContactForm = () => {
         <>
             <ToastContainer position="top-right" autoClose={3000} />
 
-            <div className="container py-12 md:py-24 border-b border-black/50">
+            <div className="container pt-12 md:pt-24">
                 <div className="w-full grid grid-cols-1 md:grid-cols-2">
                     <div className=" md:pr-32 space-y-5">
                         <DotButton text="Direct" className={"md:ml-5"} />

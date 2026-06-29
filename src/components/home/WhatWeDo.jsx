@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import DotField from "../animation/DotField";
 gsap.registerPlugin(ScrollTrigger);
 
 const engagementData = [
@@ -54,7 +55,7 @@ const WhatWeDo = () => {
 
     useGSAP(() => {
 
-            if(window.innerWidth<750) return
+        if (window.innerWidth < 750) return
 
         const tl = gsap.timeline({
             scrollTrigger: {
@@ -66,15 +67,15 @@ const WhatWeDo = () => {
         })
         tl.from([".do_card_0"], {
             transform: "translateY(180%)",
-            ease:"linear"
+            ease: "linear"
         })
         tl.from([".do_card_1"], {
             transform: "translateY(180%)",
-            ease:"linear"
+            ease: "linear"
         })
         tl.from([".do_card_2"], {
             transform: "translateY(180%)",
-            ease:"linear"
+            ease: "linear"
         })
     })
 
@@ -100,12 +101,29 @@ const WhatWeDo = () => {
                                         key={index}
                                         className={`do_card_${index} group md:translate-y-10 max-sm:h-[30vh] md:aspect-4/3  relative  grid grid-cols-3 rounded-lg  overflow-hidden bg-white text-black  border border-black/50  p-5`}
                                     >
-                                        <div className=" col-span-1 w-full relative z-10 flex justify-between">
+                                        <div className="w-full h-full absolute">
+
+                                            <DotField
+                                                dotRadius={2.5}
+                                                dotSpacing={15}
+                                                bulgeStrength={67}
+                                                glowRadius={160}
+                                                sparkle={false}
+                                                waveAmplitude={0}
+                                                cursorRadius={500}
+                                                cursorForce={0.1}
+                                                bulgeOnly
+                                                gradientFrom="#4688F0"
+                                                gradientTo="#B497CF"
+                                                glowColor="#ffffff00"
+                                            />
+                                        </div>
+                                        <div className=" col-span-1 w-full pointer-events-none relative z-10 flex justify-between">
                                             <h2 className="md:font-semibold leading-none  ">
                                                 {item.number}
                                             </h2>
                                         </div>
-                                        <div className=" col-span-2 flex flex-col justify-between ">
+                                        <div className=" col-span-2 pointer-events-none relative z-10 flex flex-col justify-between ">
                                             <h4 className=" leading-none">
                                                 {item.title}
                                             </h4>
