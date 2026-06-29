@@ -57,6 +57,31 @@ const modelCards = [
 const Hero = () => {
 
   const [isMobile, setIsMobile] = useState(false);
+  const video1 = useRef(null);
+  const video2 = useRef(null);
+
+  useEffect(() => {
+    const v1 = video1.current;
+    const v2 = video2.current;
+
+    if (!v1 || !v2) return;
+
+    const sync = () => {
+      v2.currentTime = v1.currentTime;
+
+      Promise.all([
+        v1.play().catch(() => { }),
+        v2.play().catch(() => { }),
+      ]);
+    };
+
+    v1.addEventListener("loadedmetadata", sync);
+
+    return () => {
+      v1.removeEventListener("loadedmetadata", sync);
+    };
+  }, []);
+  
 
   useEffect(() => {
     const checkScreen = () => {
@@ -239,12 +264,8 @@ const Hero = () => {
                 >
                   <video
                     className=" desk_clip_vid opacity-0  w-full h-full object-cover"
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                  >
-                    <source src="/videos/hero_video.mp4" type="video/mp4" />
+                    ref={video1} autoPlay muted loop playsInline>
+                    <source src="/videos/hero_video.mp4" />
                   </video>
                 </div>
                 <div
@@ -257,12 +278,8 @@ const Hero = () => {
                 >
                   <video
                     className=" desk_clip_vid opacity-0  w-full h-full object-cover"
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                  >
-                    <source src="/videos/hero_video.mp4" type="video/mp4" />
+                    ref={video1} autoPlay muted loop playsInline>
+                    <source src="/videos/hero_video.mp4" />
                   </video>
                 </div>
               </div>
