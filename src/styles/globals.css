@@ -81,18 +81,9 @@ button {
 
 
 .highlight {
-  display: inline;
-  color: white;
-  padding: 0 4px;
-  box-decoration-break: clone;
-  -webkit-box-decoration-break: clone;
-  background: #4688F0;
+  font-weight: 1000;
 }
 .highlight_white {
-  display: inline;
-  color: #4688F0 !important;
-  padding: 0 4px;
-  box-decoration-break: clone;
-  -webkit-box-decoration-break: clone;
-  background: #ffffff;
+   font-weight: 1000;
+
 }

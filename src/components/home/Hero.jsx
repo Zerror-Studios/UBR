@@ -7,6 +7,7 @@ import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 import SplitText from 'gsap/dist/SplitText'
 import Image from 'next/image';
 import GradientBlinds from '../animation/GradientBlinds';
+import Aurora from '../animation/Aurora';
 gsap.registerPlugin(ScrollTrigger, SplitText)
 
 const modelCards = [
@@ -94,46 +95,42 @@ const Hero = () => {
     const tl = gsap.timeline({
       delay: 0
     })
-    tl.to([".itx_1", ".itx_2"], {
+    tl.to([".desk_itx_1", ".desk_itx_2"], {
       transform: "translateY(0)",
       ease: "in-out-quint",
     })
-    tl.to(".itx_1", {
+    tl.to(".desk_itx_1", {
       transform: "translateY(100%)",
       ease: "in-out-quint",
     }, ">+=0.25")
-    tl.to(".itx_2", {
+    tl.to(".desk_itx_2", {
       transform: "translateY(-100%)",
       ease: "in-out-quint",
     }, "<")
-    tl.to(".load_clip_paren_1", {
-      y: -6,
-      x: 5,
+    tl.to(".desk_load_clip_paren_1", {
+      y: -4,
+      x: 3,
       duration: 0.5,
       ease: "in-out-quint",
     }, "<")
-    tl.to(".load_clip_paren_2", {
-      y: 6,
-      x: -5,
+    tl.to(".desk_load_clip_paren_2", {
+      y: 4,
+      x: -3,
       duration: 0.5,
       ease: "in-out-quint",
     }, "<")
-    tl.to(".load_clip_vid", {
-      height: "100%",
-      width: "100vw",
+    tl.to(".desk_loader_paren", {
+      scale: 3.5,
       duration: 1,
       ease: "in-out-quint",
     });
-
-    tl.to(".load_clip_paren", {
-      height: "100%",
-      duration: 1,
-      ease: "in-out-quint",
-    }, "<");
-    tl.to(["content_box", ".hero_content", ".hero_bg", ".video_section"], {
+    tl.to(".desk_clip_vid", {
+      opacity: 1,
+    })
+    tl.to([".content_box", ".hero_content", ".hero_bg", ".video_section"], {
       opacity: 1,
       stagger: 0.5
-    })
+    }, "<");
     tl.to(heading_split.lines, {
       yPercent: 0,
       duration: 0.8,
@@ -182,12 +179,27 @@ const Hero = () => {
       tl.to(".hero_content", {
         opacity: 0
       })
-      tl.to(".video_section", {
-        width: "100vw",
+      tl.to(".desk_loader_paren", {
+        scale: 25,
         ease: "linear",
-        rotateX: 0,
-        height: "100vh",
-        borderRadius: "0px"
+      }, "<")
+      tl.to(".desk_clip_l1", {
+        duration:0.1,
+        clipPath: "polygon(0 0, 0% 100%, 100% 0)"
+      }, "<")
+      tl.to(".desk_clip_l2", {
+        duration:0.1,
+        clipPath: "polygon(100% 0%, 0% 100%, 100% 100%)"
+      }, "<")
+      tl.to(".desk_load_clip_paren_1", {
+        duration:0.1,
+        y: 0,
+        x: 0,
+      }, "<")
+      tl.to(".desk_load_clip_paren_2", {
+        duration:0.1,
+        y: 0,
+        x: 0,
       }, "<")
     }
     tl.to(".over_txt", {
@@ -219,72 +231,75 @@ const Hero = () => {
     <>
       {!isMobile && (
         <>
-          <div className=" hidden  md:flex justify-center items-center w-full fixed top-0 left-0 z-[100]  h-screen   overflow-hidden pointer-events-none">
-            <div className="absolute translate-x-40">
-              <div className=' text-5xl  leading-none block overflow-hidden font-semibold diagramm'> <p className='translate-y-full itx_1'>ubr</p></div>
-              <div className=' text-5xl  leading-none block overflow-hidden uppercase font-semibold diagramm'> <p className='-translate-y-full itx_2'>Disrptve</p> </div>
-            </div>
-            <div className="  h-[0%]  load_clip_paren_1 load_clip_paren ">
-              <div style={{ clipPath: "polygon(0 0, 0% 100%, 90% 0)" }} className="size-18 clip_rd -translate-y-9 translate-x-1/2 shrink-0 bg-[#d80000]"></div>
-            </div>
-            <div className="w-[0%] shrink-0 load_clip_vid  h-[0%] "></div>
-            <div className=" h-[0%]  load_clip_paren_2 load_clip_paren  flex w-18 justify-end items-end">
-              <div style={{ clipPath: "polygon(100% 0, 10% 100%, 100% 100%)" }} className="size-18 clip_rd translate-y-9 -translate-x-1/2 shrink-0 bg-[#d70000]"></div>
-            </div>
-          </div>
+
 
           <div className='story_wrapper relative h-[300vh] md:h-[500vh]'>
 
 
             <div className=" sticky top-0   hero_section w-full h-screen perspective-[30rem] center  overflow-hidden  content_box ">
 
+              <div className=" desk_loader_paren hidden   md:flex justify-center items-center w-full absolute top-0 left-0 z-[1]  h-screen   overflow-hidden pointer-events-none">
+                <div className="absolute translate-x-40">
+                  <div className=' text-5xl  leading-none block overflow-hidden font-semibold diagramm'> <p className='translate-y-full desk_itx_1'>ubr</p></div>
+                  <div className=' text-5xl  leading-none block overflow-hidden uppercase font-semibold diagramm'> <p className='-translate-y-full desk_itx_2'>Disrptve</p> </div>
+                </div>
+                <div className="  h-[0%]  desk_load_clip_paren_1  ">
+                  <div style={{ clipPath: "polygon(0 0, 0% 95%, 95% 0)" }} className="size-18 clip_rd desk_clip_l1 -translate-y-9 translate-x-1/2 shrink-0 bg-[#d80000]">
+                    <video
+                      className=" desk_clip_vid opacity-0 w-full h-full object-cover"
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                    >
+                      <source src="/videos/hero_video.mp4" type="video/mp4" />
+                    </video>
+                  </div>
+                </div>
+                <div className=" h-[0%]  desk_load_clip_paren_2   flex w-18 justify-end items-end">
+                  <div style={{ clipPath: "polygon(100% 5%, 5% 100%, 100% 100%)" }} className="size-18 clip_rd desk_clip_l2 translate-y-9 -translate-x-1/2 shrink-0 bg-[#d70000]">
+                    <video
+                      className="desk_clip_vid opacity-0 w-full h-full object-cover"
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                    >
+                      <source src="/videos/hero_video.mp4" type="video/mp4" />
+                    </video>
+                  </div>
+                </div>
+              </div>
 
               <div className="  absolute inset-0 z-[-1] hero_bg bg-white   opacity-0">
-                <GradientBlinds
-                  gradientColors={['#ffffff', '#4688F0']}
-                  angle={0}
-                  noise={0}
-                  blindCount={10}
-                  blindMinWidth={2}
-                  spotlightRadius={1}
-                  spotlightSoftness={0.9}
-                  spotlightOpacity={0.4}
-                  mouseDampening={0.5}
-                  distortAmount={0}
-                  shineDirection="right"
-                // mixBlendMode='darken'
-
-                />
+                <Aurora />
               </div>
 
-
-              <div className="video_section max-sm:-translate-y-[80%] w-[80vw] opacity-0 lg:rotate-x-20 md:w-[30vw] aspect-video transform-3d  absolute  z-[-1] rounded-xl overflow-hidden">
+              {/* <div className="video_section max-sm:-translate-y-[80%] w-[80vw] opacity-0 lg:rotate-x-20 md:w-[30vw] aspect-video transform-3d  absolute  z-[-1] rounded-xl overflow-hidden">
                 <video src="/videos/hero_video.mp4" loop autoPlay muted playsInline className='cover'></video>
-              </div>
+              </div> */}
 
-              <div className="top-full absolute z-[100] w-full h-full center over_txt bg-[#4688F0] ">
-                <p
-                  className="anim_par diagramm text-4xl lg:text-[4rem] font-semibold padding w-full md:w-[82%] text-center leading-tight text-white whitespace-normal"
-                >
-                  UBR DISRPTVE is a venture builder for consumer brands that want to scale
-                  profitably. We back founders launching new ventures and operators reigniting
-                  established ones.
-                </p>
-              </div>
+              <div className=' hero_content  opacity-0 z-100 container h-[100svh] flex items-end pb-10  md:pb-16'>
 
-              <div className=' hero_content opacity-0 container h-[100svh] flex items-end pb-10  md:pb-16'>
-
-                <div className="pointer-events-none w-full  relative z-10 md:grid items-end grid-cols-6">
+                <div className="pointer-events-none w-full  relative md:grid items-end grid-cols-6">
                   <div className="col-span-4">
                     <p className="md:text-xl paragraph_split mb-2   ">The integrated model  for    non-linear growth.</p>
-
                     <h1 className=' max-sm:mb-5 max-sm:mt-2 max-sm:hidden  leading-none tracking-tighter heading_split '>Built for Entrepreneurs <br /> chasing meaningful outcomes.</h1>
-                    <h1 className=' max-sm:mb-5 max-sm:mt-2 md:hidden   leading-none tracking-tighter heading_split '>Built for Entrepreneurs chasing meaningful outcomes.</h1>
                   </div>
                   <div className=" pb-4 text-left md:text-right flex md:justify-end pointer-events-none relative z-10 w-full col-span-2">
                     <p className='leading-tight  md:text-xl   paragraph_split  mt-5'>By <b> Binoy Khimji,</b> <b> Ashish Chowdhry </b> <br /> and  <b>Kaushik Sundararajan.</b></p>
                   </div>
                 </div>
+              </div>
+
+              <div className="top-full absolute z-[100] w-full h-full center over_txt bg-[#4688F0] ">
+                <p
+                  className="anim_par uppercase diagramm text-4xl lg:text-[3.5rem] font-semibold padding w-full md:w-[82%] text-center leading-tight text-white whitespace-normal"
+                >
+                  UBR DISRPTVE is a venture builder for consumer brands that want to scale
+                  profitably. We back founders launching new ventures and operators reigniting
+                  established ones.
+                </p>
               </div>
 
               <div className=" card_paren top-full absolute z-[200] w-full h-full inset-0 ">

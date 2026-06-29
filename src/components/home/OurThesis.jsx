@@ -88,42 +88,42 @@ const OurThesis = () => {
                     </div>
                 </div>
                 <div className=" w-full text-[2.5vw] md:text-[1vw] md:w-1/2 h-[50vh] md:h-screen center relative">
-                    <div className=" circ_1 scale-0 opacity-0 size-[30vw] md:size-[15vw] -translate-x-[25vw] md:-translate-x-[12vw] absolute border border-white rounded-full center">
+                    <div className=" circ_1 scale-0 opacity-0 size-[30vw] md:size-[15vw] -translate-x-[25vw] md:-translate-x-[12vw] absolute border-2 border-white rounded-full center">
                         <div className='   aeonik  uppercase block w-fit overflow-hidden'>
                             <p className='spn_1'>
                                 Talent
                             </p>
                         </div>
                     </div>
-                    <div className=" circ_2 scale-0 opacity-0 size-[30vw] md:size-[15vw] -translate-y-[25vw] md:-translate-y-[12vw] absolute border border-white rounded-full center">
+                    <div className=" circ_2 scale-0 opacity-0 size-[30vw] md:size-[15vw] -translate-y-[25vw] md:-translate-y-[12vw] absolute border-2 border-white rounded-full center">
                         <div className='   aeonik  uppercase block w-fit overflow-hidden'>
                             <p className='spn_1'>
                                 Capital
                             </p>
                         </div>
                     </div>
-                    <div className="circ_3  scale-0 opacity-0 size-[30vw] md:size-[15vw] translate-x-[25vw] md:translate-x-[12vw] absolute border border-white rounded-full center">
+                    <div className="circ_3  scale-0 opacity-0 size-[30vw] md:size-[15vw] translate-x-[25vw] md:translate-x-[12vw] absolute border-2 border-white rounded-full center">
                         <div className='   aeonik  uppercase block w-fit overflow-hidden'>
                             <p className='spn_1'>
                                 Design
                             </p>
                         </div>
                     </div>
-                    <div className=" circ_4 scale-0 opacity-0 size-[30vw] md:size-[15vw] translate-y-[25vw] md:translate-y-[12vw] absolute border border-white rounded-full center">
+                    <div className=" circ_4 scale-0 opacity-0 size-[30vw] md:size-[15vw] translate-y-[25vw] md:translate-y-[12vw] absolute border-2 border-white rounded-full center">
                         <div className='   aeonik  uppercase block w-fit overflow-hidden'>
                             <p className='spn_1'>
                                 Strategy
                             </p>
                         </div>
                     </div>
-                    <div className=" circ_5  size-[30vw] md:size-[15vw] absolute border border-white rounded-full center">
+                    <div className=" circ_5  size-[30vw] md:size-[15vw] absolute border-2 border-white rounded-full center">
                         <div className='   aeonik  uppercase block w-fit overflow-hidden'>
                             <p className='spn_1'>
                                 Distribution
                             </p>
                         </div>
                     </div>
-                    <div className=" circ_6 opacity-0 size-[30vw] md:size-[15vw]  absolute border border-white rounded-full center">
+                    <div className=" circ_6 opacity-0 size-[30vw] md:size-[15vw]  absolute border-2 border-white rounded-full center">
                         <div className='   aeonik  uppercase block w-fit overflow-hidden'>
                             <p className='spn_2 translate-y-full'>
                                 Sustainable

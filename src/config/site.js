@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "UBR x DISRPTVE",
   description:
     "A venture builder for India, combining capital, operating advisory, brand strategy, talent, and audience access for profitable scale.",
-  url: "https://ubr-delta.vercel.app",
+  url: "https://www.ubrdisrptve.com",
   locale: "en_IN",
   language: "en-IN",
   ogImage: "/og.png",
