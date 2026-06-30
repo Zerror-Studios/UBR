@@ -198,9 +198,9 @@ const MobileHero = () => {
 
                         <div className=" w-full h-full py-18 center  bg-[#4688F0] ">
                             <p
-                                className=" diagramm text-2xl lg:text-[4rem] font-semibold padding w-full md:w-[82%] text-center leading-tight text-white whitespace-normal"
+                                className=" diagramm text-2xl lg:text-[4rem] font-semibold uppercase padding w-full md:w-[82%] text-center leading-tight text-white whitespace-normal"
                             >
-                                <span className='text-4xl'>UBR DISRPTVE</span> is a venture builder for consumer brands that want to <span className='highlight_white'> scale profitably.</span>
+                                <span className=''>UBR DISRPTVE</span> is a venture builder for consumer brands that want to <span className='highlight_white'> scale profitably.</span>
                                 We back founders launching new ventures and operators reigniting
                                 established ones.
                             </p>
