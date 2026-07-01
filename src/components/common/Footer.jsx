@@ -27,10 +27,6 @@ const navLinks = [
     label: "Team",
     href: "/team"
   },
-  {
-    label: "Terms and Conditions",
-    href: "/terms-and-conditions"
-  },
 ]
 const emails = [
   "binoykhimji@gmail.com",
@@ -229,8 +225,12 @@ const Footer = () => {
           </div>
         </div>
         <div className="container">
-          <div className="w-full  border-t border-white/50 mt-3 py-3">
-            <p className=' opacity-60 text-xs aeonik'>© 2026 UBR × DISRPTVE</p>
+          <div className=" w-full flex items-center justify-between  border-t border-white/50 mt-3 py-3">
+            <p className='opacity-60   text-xs aeonik'>© 2026 UBR × DISRPTVE</p>
+
+            <Link href={"/terms-and-conditions"} className=' relative w-fit block cursor-pointer hover:opacity-100 transition-all duration-150 opacity-60 text-sm group'>Terms and Conditions   <span
+                    className="absolute left-0 bottom-0 h-[1.5px] rounded-full w-full bg-[#FFFFFF]  transition-transform duration-300 ease-out   scale-x-0 origin-left group-hover:scale-x-100    "
+                  /></Link>
           </div>
         </div>
       </div>

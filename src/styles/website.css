@@ -101,12 +101,10 @@
   mask-image: radial-gradient(#000 0, #000 30%, transparent 75%);
 }
 
-
 .anim_par .char {
   display: inline-block;
   white-space: pre; /* preserve spacing */
 }
-
 
 .card-bg {
   position: absolute;
@@ -125,15 +123,31 @@
   animation: barPulse 3s ease-in-out infinite alternate;
 }
 @keyframes barPulse {
-  from { transform: scaleY(0.9); }
-  to { transform: scaleY(1); }
+  from {
+    transform: scaleY(0.9);
+  }
+  to {
+    transform: scaleY(1);
+  }
 }
-.fundraise-bg .bar-0 { animation-delay: 0s; }
-.fundraise-bg .bar-1 { animation-delay: 0.2s; }
-.fundraise-bg .bar-2 { animation-delay: 0.4s; }
-.fundraise-bg .bar-3 { animation-delay: 0.6s; }
-.fundraise-bg .bar-4 { animation-delay: 0.8s; }
-.fundraise-bg .bar-5 { animation-delay: 1.0s; }
+.fundraise-bg .bar-0 {
+  animation-delay: 0s;
+}
+.fundraise-bg .bar-1 {
+  animation-delay: 0.2s;
+}
+.fundraise-bg .bar-2 {
+  animation-delay: 0.4s;
+}
+.fundraise-bg .bar-3 {
+  animation-delay: 0.6s;
+}
+.fundraise-bg .bar-4 {
+  animation-delay: 0.8s;
+}
+.fundraise-bg .bar-5 {
+  animation-delay: 1s;
+}
 .fundraise-bg .trend-line {
   stroke-dasharray: 600;
   stroke-dashoffset: 0;
@@ -141,42 +155,88 @@
   animation: drawLine 3s ease-out infinite alternate;
 }
 @keyframes drawLine {
-  0% { stroke-dashoffset: 600; }
-  20%, 100% { stroke-dashoffset: 0; }
+  0% {
+    stroke-dashoffset: 600;
+  }
+  20%,
+  100% {
+    stroke-dashoffset: 0;
+  }
 }
 .fundraise-bg .coin {
   opacity: 0;
   filter: drop-shadow(0 0 6px rgba(70, 136, 240, 1));
   animation: floatCoin 2.6s ease-in-out infinite;
 }
-.fundraise-bg .coin-0 { animation-delay: 0s; }
-.fundraise-bg .coin-1 { animation-delay: 0.3s; }
-.fundraise-bg .coin-2 { animation-delay: 0.6s; }
-.fundraise-bg .coin-3 { animation-delay: 0.9s; }
-.fundraise-bg .coin-4 { animation-delay: 1.2s; }
-.fundraise-bg .coin-5 { animation-delay: 1.5s; }
+.fundraise-bg .coin-0 {
+  animation-delay: 0s;
+}
+.fundraise-bg .coin-1 {
+  animation-delay: 0.3s;
+}
+.fundraise-bg .coin-2 {
+  animation-delay: 0.6s;
+}
+.fundraise-bg .coin-3 {
+  animation-delay: 0.9s;
+}
+.fundraise-bg .coin-4 {
+  animation-delay: 1.2s;
+}
+.fundraise-bg .coin-5 {
+  animation-delay: 1.5s;
+}
 @keyframes floatCoin {
-  0%, 100% { opacity: 0.2; }
-  50%      { opacity: 1; }
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 /* ---- Card 2: Advisory ---- */
 
-.advisory-bg .orbit { transform-origin: 200px 200px; }
-.advisory-bg .orbit-1 { animation: spin  6s linear infinite; }
-.advisory-bg .orbit-2 { animation: spinR 9s linear infinite; }
-.advisory-bg .orbit-3 { animation: spin 14s linear infinite; }
-.advisory-bg .core { 
+.advisory-bg .orbit {
+  transform-origin: 200px 200px;
+}
+.advisory-bg .orbit-1 {
+  animation: spin 6s linear infinite;
+}
+.advisory-bg .orbit-2 {
+  animation: spinR 9s linear infinite;
+}
+.advisory-bg .orbit-3 {
+  animation: spin 14s linear infinite;
+}
+.advisory-bg .core {
   transform-origin: 200px 200px;
   animation: corePulse 2.6s ease-in-out infinite;
   filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.7));
 }
-@keyframes spin  { to { transform: rotate(360deg);  } }
-@keyframes spinR { to { transform: rotate(-360deg); } }
-@keyframes corePulse {
-  0%, 100% { transform: scale(1);   opacity: 1; }
-  50%      { transform: scale(1.4); opacity: 0.2; }
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
-/* ---- Card 3: Venture ---- */
+@keyframes spinR {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+@keyframes corePulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0.2;
+  }
+}
+
+/* ---- Card 3: Venture  ---- */
 
 .venture-grid {
   position: absolute;
@@ -193,36 +253,58 @@
   from { background-position: 0 0, 0 0; }
   to   { background-position: 0 32px, 32px 0; }
 }
-.cube-scene {
+
+.iso-scene {
   position: absolute;
-  top: 50%; left: 50%;
-  width: 120px; height: 120px;
-  transform: translate(-50%, -60%);
-  perspective: 800px;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.cube {
-  position: relative;
-  width: 100%; height: 100%;
-  transform-style: preserve-3d;
-  transform: rotateX(-25deg) rotateY(35deg);
-  animation: cubeSpin 10s linear infinite;
+
+.iso-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
 }
-@keyframes cubeSpin {
-  from { transform: rotateX(-25deg) rotateY(0deg);   }
-  to   { transform: rotateX(-25deg) rotateY(360deg); }
-}
-.face {
-  position: absolute; inset: 0;
-  border: 1px solid #0062ff;
-  background: linear-gradient(135deg, #4688F0, #4688F010);
-  backdrop-filter: blur(2px);
-}
-.f-front  { transform: translateZ(60px); }
-.f-back   { transform: rotateY(180deg) translateZ(60px); }
-.f-right  { transform: rotateY(90deg)  translateZ(60px); }
-.f-left   { transform: rotateY(-90deg) translateZ(60px); }
-.f-top    { transform: rotateX(90deg)  translateZ(60px); }
-.f-bottom { transform: rotateX(-90deg) translateZ(60px); }
+
 @media (max-width: 750px) {
-  .engage-card .card-bg { opacity: 0.45; }
+  .iso-svg {
+    width: 90%;
+    height: 90%;
+  }
 }
+
+.iso-cube {
+  transform-origin: center;
+  transform-box: fill-box;
+  animation: cubeWave 5s linear infinite;
+}
+
+@keyframes cubeWave {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  15% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  70% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
+

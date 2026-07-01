@@ -59,7 +59,7 @@ const FundraiseBg = () => (
                 { x: 280, y: 140, h: 260 },
                 { x: 340, y: 80, h: 320 },
             ].map((bar, i) => (
-                <rect key={i} className={`bar bar-${i}`} x={bar.x} y={bar.y+10} width="32" height={bar.h} fill="#4688F0" rx="4" />
+                <rect key={i} className={`bar bar-${i}`} x={bar.x} y={bar.y + 10} width="32" height={bar.h} fill="#4688F0" rx="4" />
             ))}
             <polyline
                 className="trend-line"
@@ -83,8 +83,8 @@ const FundraiseBg = () => (
     </div>
 );
 const AdvisoryBg = () => (
-    <div className="card-bg advisory-bg">
-        <svg viewBox="0 0 400 400" className="absolute inset-0 w-full h-full">
+    <div className="card-bg advisory-bg ">
+        <svg viewBox="0 0 390 390" className="absolute  w-full h-[90%] bottom-0">
             <circle cx="200" cy="200" r="60" fill="none" stroke="#4688F050" />
             <circle cx="200" cy="200" r="110" fill="none" stroke="#4688F050" />
             <circle cx="200" cy="200" r="160" fill="none" stroke="#4688F050" />
@@ -101,21 +101,122 @@ const AdvisoryBg = () => (
         </svg>
     </div>
 );
-const VentureBg = () => (
+
+const VentureBg = () => {
+  const SIZE = 4;
+
+  const cubes = [];
+
+  // Create a 4x4 footprint with varying heights
+  const heights = [
+    [4, 4, 4, 4],
+    [4, 4, 4, 4],
+    [4, 4, 4, 4],
+    [4, 4, 4, 4],
+  ];
+
+  heights.forEach((row, y) => {
+    row.forEach((h, x) => {
+      for (let z = 0; z < h; z++) {
+        cubes.push({
+          x,
+          y,
+          z,
+          key: `${x}-${y}-${z}`,
+        });
+      }
+    });
+  });
+
+  const S = 32;
+
+  const iso = (x, y, z) => ({
+    x: (x - y) * S,
+    y: (x + y) * (S / 2) - z * S,
+  });
+
+  cubes.sort(
+    (a, b) =>
+      a.x + a.y - (b.x + b.y) ||
+      a.z - b.z
+  );
+
+  return (
     <div className="card-bg venture-bg">
-        <div className="venture-grid" />
-        <div className="cube-scene">
-            <div className="cube">
-                <span className="face f-front" />
-                <span className="face f-back" />
-                <span className="face f-right" />
-                <span className="face f-left" />
-                <span className="face f-top" />
-                <span className="face f-bottom" />
-            </div>
-        </div>
+      <div className="venture-grid" />
+
+      <div className="iso-scene">
+        <svg
+          className="iso-svg"
+          viewBox="-220 -260 440 420"
+          preserveAspectRatio="xMidYMid meet"
+        >
+          <defs>
+            <linearGradient id="top" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="#4688F0" />
+              <stop offset="100%" stopColor="#4688F0" />
+            </linearGradient>
+
+            <linearGradient id="left" x1="0" x2="1">
+              <stop offset="0%" stopColor="#4688F0" />
+              <stop offset="100%" stopColor="#4688F0" />
+            </linearGradient>
+
+            <linearGradient id="right" x1="0" x2="1">
+              <stop offset="0%" stopColor="#4688F0" />
+              <stop offset="100%" stopColor="#4688F0" />
+            </linearGradient>
+          </defs>
+
+          <g className="iso-stack">
+            {cubes.map((cube, i) => {
+              const t = iso(cube.x, cube.y, cube.z + 1);
+              const tr = iso(cube.x + 1, cube.y, cube.z + 1);
+              const tb = iso(cube.x + 1, cube.y + 1, cube.z + 1);
+              const tl = iso(cube.x, cube.y + 1, cube.z + 1);
+
+              const bl = iso(cube.x, cube.y + 1, cube.z);
+              const bb = iso(cube.x + 1, cube.y + 1, cube.z);
+              const br = iso(cube.x + 1, cube.y, cube.z);
+
+              return (
+                <g
+                  key={cube.key}
+                  className="iso-cube"
+                  style={{
+                    animationDelay: `${i * 0.045}s`,
+                  }}
+                >
+                  <polygon
+                    points={`${t.x},${t.y} ${tl.x},${tl.y} ${bl.x},${bl.y} ${bb.x},${bb.y}`}
+                    fill="url(#left)"
+                    stroke="#ffffff"
+                    strokeWidth=".6"
+                  />
+
+                  <polygon
+                    points={`${tr.x},${tr.y} ${t.x},${t.y} ${bb.x},${bb.y} ${br.x},${br.y}`}
+                    fill="url(#right)"
+                    stroke="#ffffff"
+                    strokeWidth=".6"
+                  />
+
+                  <polygon
+                    points={`${t.x},${t.y} ${tr.x},${tr.y} ${tb.x},${tb.y} ${tl.x},${tl.y}`}
+                    fill="url(#top)"
+                    stroke="#ffffff"
+                    strokeWidth=".6"
+                  />
+                </g>
+              );
+            })}
+          </g>
+        </svg>
+      </div>
     </div>
-);
+  );
+};
+
 const WhatWeDo = () => {
     const bgMap = [FundraiseBg, AdvisoryBg, VentureBg];
 

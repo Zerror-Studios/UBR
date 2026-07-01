@@ -178,8 +178,8 @@ const MobileHero = () => {
 
                         <div className="  hero_section w-full pt-14 pb-10 h-[100svh] flex flex-col justify-between  overflow-hidden  content_box ">
 
-                            <div className="video_section mx-auto container opacity-0  rounded-xl overflow-hidden center">
-                                <video src="/videos/hero_video.mp4" loop autoPlay muted playsInline className='aspect-video rounded-xl'></video>
+                            <div className="video_section mx-auto container opacity-0 center  rounded-xl overflow-hidden">
+                                <video src="/videos/portrait_video.mp4" loop autoPlay muted playsInline className='cover rounded-xl'></video>
                             </div>
                             <div className=' hero_content mt-10 opacity-0 padding flex items-end '>
 
