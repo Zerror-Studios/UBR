@@ -188,9 +188,9 @@ const MobileHero = () => {
                                         <p className="md:text-xl paragraph_split mb-2   ">The integrated model  for    non-linear growth.</p>
                                         <h1 className=' mt-2 md:hidden   leading-12 md:leading-24 tracking-tighter heading_split '>Built for Entrepreneurs chasing meaningful outcomes.</h1>
                                     </div>
-                                    <div className=" mt-2  text-left md:text-right flex md:justify-end pointer-events-none relative z-10 w-full col-span-2">
+                                    {/* <div className=" mt-2  text-left md:text-right flex md:justify-end pointer-events-none relative z-10 w-full col-span-2">
                                         <p className='leading-tight  md:text-xl   paragraph_split '>By <b> Binoy Khimji,</b> <b> Ashish Chowdhry </b> <br /> and  <b>Kaushik Sundararajan.</b></p>
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
                         </div>
