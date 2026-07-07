@@ -162,7 +162,7 @@ const Header = () => {
         </div>
         <div className="md:w-[25%] flex items-center justify-end">
           <Link href={"/contact"} onClick={() => setOpen(false)}>
-            <button className={` btn_paren diagramm whitespace-nowrap text-xs md:text-sm uppercase group block w-fit  bg-white  px-2 md:px-4 border hover:text-[#ffffff]! lg:border-transparent hover:border-[#ffffff] hover:bg-transparent py-2 max-sm:pb-1.5 md:py-2.5 relative overflow-hidden rounded-md  transition-border duration-300 `}>
+            <button className={` btn_paren diagramm whitespace-nowrap text-xs md:text-sm uppercase group block w-fit  bg-white  px-2 md:px-4 border  border-[#000000] hover:bg-transparent py-2 max-sm:pb-1.5 md:py-2.5 relative overflow-hidden rounded-md  transition-border duration-300 `}>
               <span className='  absolute w-full h-full z-[-1] bg-[#ffffff]  inset-0 group-hover:-top-full transition-all duration-300'></span>
               Get in Touch
             </button>

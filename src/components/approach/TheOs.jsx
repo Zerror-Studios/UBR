@@ -11,7 +11,7 @@ const processData = [
   {
     id: 1,
     tag: "PICK",
-    img: "/images/approach/pick.png",
+    img: "/images/approach/audit.jpeg",
     title: "Audit & Align",
     description:
       "Listen to category, competition and culture. Establish a clear baseline.",
@@ -20,7 +20,7 @@ const processData = [
   {
     id: 2,
     tag: "REFRAME",
-    img: "/images/approach/reframe.png",
+    img: "/images/approach/reframe.jpeg",
     title: "Reframe & Reimagine",
     description:
       "Identify growth bottlenecks. Redefine purpose and positioning for market impact.",
@@ -29,7 +29,7 @@ const processData = [
   {
     id: 3,
     tag: "DESIGN",
-    img: "/images/approach/design.png",
+    img: "/images/approach/design.jpeg",
     title: "Design the Engine",
     description:
       "Build the experience layer, identity, packaging, retail-ready, high-converting digital.",
@@ -38,7 +38,7 @@ const processData = [
   {
     id: 4,
     tag: "SCALE",
-    img: "/images/approach/scale.png",
+    img: "/images/approach/scale.jpeg",
     title: "Scale with Intelligence",
     description:
       "Activate growth, performance media, authentic content, community building.",
@@ -47,7 +47,7 @@ const processData = [
   {
     id: 5,
     tag: "CAPITALISE",
-    img: "/images/approach/capitalise.png",
+    img: "/images/approach/capitalise.jpeg",
     title: "Institutionalise & Capitalise",
     description:
       "Embed governance. Activate our network. Shape the investor narrative. Open doors.",

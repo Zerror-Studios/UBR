@@ -70,14 +70,14 @@ const SectionHero = ({ btnText, heading, desc }) => {
     })
     return (
         <div className=' content_box container h-[60vh]!  overflow-hidden items-end flex bg-[#4688F0] text-white pb-16'>
-            <div className="absolute w-full h-full inset-0 z-10">
+            <div className="absolute w-full h-full inset-0 z-10 max-lg:hidden">
                 <Threads
-                    amplitude={1.4}
-                    distance={0.7}
+                    amplitude={3}
+                    distance={0.45}
                     enableMouseInteraction
                 />
             </div>
-            <div className="space-y-5 w-full  relative z-10 ">
+            <div className="space-y-5 w-full pointer-events-none  relative z-10 ">
                 <h1 className=' heading_split md:w-[80%] leading-none  '>{heading}</h1>
                 <p className=' paragraph_split md:w-[45%] leading-tight text-xl'>{desc}</p>
             </div>

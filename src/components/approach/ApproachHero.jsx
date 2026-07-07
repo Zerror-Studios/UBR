@@ -5,6 +5,7 @@ import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 import SplitText from 'gsap/dist/SplitText'
 import { useGSAP } from '@gsap/react'
 import TheMindset from './TheMindset'
+import Threads from '../animation/Threads'
 gsap.registerPlugin(ScrollTrigger, SplitText)
 
 const ApproachHero = () => {
@@ -59,8 +60,15 @@ const ApproachHero = () => {
 
   });
   return (
-    <div className=" content_box w-full bg-[#4688F0]  text-white">
-      <div className=" content_box w-full relative overflow-hidden ">
+    <div className=" content_box w-full bg-[#4688F0] overflow-hidden relative text-white">
+      <div className="absolute w-full h-full inset-0 z-10">
+        <Threads
+          amplitude={1.9}
+          distance={1.0}
+          enableMouseInteraction
+        />
+      </div>
+      <div className=" pointer-events-none content_box w-full relative overflow-hidden ">
         <div className='container h-[60vh]! overflow-hidden items-end flex pb-16'>
           <div className="space-y-5 w-full  relative z-10 ">
             <h1 className=' heading_split md:w-[80%] leading-none  '>An operating system for profitable scale.</h1>

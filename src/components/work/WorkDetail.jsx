@@ -10,6 +10,7 @@ import { WorkData } from '@/store/WorkData'
 import { Link } from 'next-view-transitions'
 import Marquee from 'react-fast-marquee'
 import Image from 'next/image'
+import Threads from '../animation/Threads'
 gsap.registerPlugin(ScrollTrigger, SplitText)
 
 const WorkDetail = () => {
@@ -136,57 +137,6 @@ const WorkDetail = () => {
 
   });
 
-  useGSAP(() => {
-    const heading_split = SplitText.create(".heading_split", {
-      type: "lines",
-      linesClass: "split-line"
-    });
-    const paragraph_split = SplitText.create(".paragraph_split", {
-      type: "lines",
-      linesClass: "split-line"
-    });
-
-    [...heading_split.lines, ...paragraph_split.lines].forEach((line) => {
-      const wrapper = document.createElement("div");
-
-      wrapper.classList.add("line-wrapper");
-
-      line.parentNode.insertBefore(wrapper, line);
-      wrapper.appendChild(line);
-    });
-
-    gsap.set([heading_split.lines, paragraph_split.lines], { yPercent: 100 });
-
-    const tl = gsap.timeline({
-      delay: 1
-    })
-    tl.to(".content_box", {
-      opacity: 1,
-      duration: 0.01
-    })
-    tl.to(".border_bar", {
-      height: "100%",
-      stagger: 0.2
-    });
-    tl.to(heading_split.lines, {
-      yPercent: 0,
-      duration: 0.8,
-      ease: "expo.out",
-      stagger: 0.05,
-    }, "<");
-    tl.to(paragraph_split.lines, {
-      yPercent: 0,
-      duration: 0.8,
-      ease: "expo.out",
-      stagger: 0.05,
-    }, "<+0.2");
-    tl.to([".blink_btn",], {
-      opacity: 1,
-      stagger: 0.15
-    }, "<");
-
-  });
-
   return (
     <>
       <div
@@ -200,16 +150,24 @@ const WorkDetail = () => {
         </Marquee>
       </div>
       <div className=" content_box w-full relative overflow-hidden text-white bg-[#4688F0]  ">
-        <div className='container h-[60vh]! overflow-hidden items-end flex pb-16'>
+        <div className='container h-[60vh]! overflow-hidden items-end flex pointer-events-none pb-16'>
           <div className="space-y-5 w-full  relative z-10 ">
             <h1 className=' heading_split md:w-[80%] leading-none  '>{work.title}</h1>
             <p className=' paragraph_split md:w-[45%] leading-tight'>{work.description}</p>
           </div>
         </div>
+
+           <div className="absolute w-full h-full inset-0 z-10 max-lg:hidden">
+                <Threads
+                    amplitude={3}
+                    distance={0.45}
+                    enableMouseInteraction
+                />
+            </div>
       </div>
 
       <div className={`w-full relative  center aspect-video ${work.classname}`}>
-        <Image fill className='object-contain scale-50' src={work.image} alt="img" />
+        <Image fill className='cover' src={work.image} alt="img" />
       </div>
       <div className="container py-12 md:py-24 md:grid grid-cols-6">
         <div className="col-span-3 grid grid-cols-2 max-sm:gap-10 md:pr-20 ">
@@ -265,8 +223,8 @@ const WorkDetail = () => {
               onMouseLeave={handleMouseLeave}
               key={i} href={`/work/${item.slug}`} className=" w-full space-y-2 group cursor-pointer ">
               <div className={`w-full center aspect-4/3 overflow-hidden rounded-md  ${item.classname}`}>
-                <div data-img-effect className="w-full h-full center">
-                  <img className=' max-sm:scale-50 md:group-hover:scale-110 transition-all duration-300' src={item.image} alt="img" />
+                <div data-img-effect className="w-full h-full relative center">
+                  <Image fill className='cover max-sm:scale-50 md:group-hover:scale-110 transition-all duration-300' src={item.image} alt="img" />
                 </div>
               </div>
               <div className="">

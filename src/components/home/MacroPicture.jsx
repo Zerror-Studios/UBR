@@ -14,7 +14,7 @@ const statsData = [
         title: "Consumer market by 2030",
         rotationX: 0.01,
         rotationY: 0.01,
-        img: "/images/home/scroll_img/img1.avif",
+        img: "/images/home/scroll_img/card1.png",
         description:
             "India's spending becomes the world's second largest, expanding 46% from 2024.",
     },
@@ -24,7 +24,7 @@ const statsData = [
         rotationX: 5,
         rotationY: -10,
         title: "Brand unlock",
-        img: "/images/home/scroll_img/img2.avif",
+        img: "/images/home/scroll_img/card2.png",
         description:
             "Structural shift from unbranded retail creates white space for new players.",
     },
@@ -34,7 +34,7 @@ const statsData = [
         title: "Median age",
         rotationX: 5,
         rotationY: 10,
-        img: "/images/home/scroll_img/img3.avif",
+        img: "/images/home/scroll_img/card3.jpg",
         description:
             "Versus 39 in China. A young, aspirational population drives global consumption.",
     },
@@ -44,7 +44,7 @@ const statsData = [
         rotationX: -5,
         rotationY: 10,
         title: "E-commerce users by 2030",
-        img: "/images/home/scroll_img/img4.avif",
+        img: "/images/home/scroll_img/card4.png",
         description:
             "Online shoppers more than triple, building a vast accessible marketplace.",
     },
@@ -54,7 +54,7 @@ const statsData = [
         rotationX: 0,
         rotationY: 0,
         title: "Digital GMV by 2030",
-        img: "/images/home/scroll_img/img5.avif",
+        img: "/images/home/scroll_img/card5.png",
         rotation: "rotateX(-10deg) rotateY(-5deg)",
         description:
             "Reaches the same scale as Brazil's full retail sector today.",

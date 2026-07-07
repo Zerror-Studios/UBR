@@ -5,6 +5,7 @@ import { Link } from 'next-view-transitions'
 import { WorkData } from '@/store/WorkData'
 import Marquee from 'react-fast-marquee'
 import gsap from 'gsap';
+import Image from 'next/image';
 
 const SelectedWork = () => {
 
@@ -101,8 +102,8 @@ const SelectedWork = () => {
                         onMouseMove={handleMouseMove}
                         onMouseLeave={handleMouseLeave} key={i} href={`/work/${item.slug}`} className=" w-full space-y-4 group cursor-pointer">
                         <div className={`w-full center aspect-video overflow-hidden rounded-sm  ${item.classname} `}>
-                            <div data-img-effect className="w-full h-full center">
-                                <img className=' max-sm:scale-50 md:group-hover:scale-110 transition-all duration-300' src={item.image} alt="img" />
+                            <div data-img-effect className="w-full h-full relative center">
+                                <Image fill className=' cover max-sm:scale-50 md:group-hover:scale-110 transition-all duration-300' src={item.image} alt="img" />
                             </div>
                         </div>
                         <div className="">

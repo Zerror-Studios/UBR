@@ -18,7 +18,7 @@ export const WorkData = [
             "We led the fundraise for Peep and onboarded Triptii Dimri as the face of the brand in the same window. The ambassador signing was timed to give the round visible runway. The round was sized to fund the campaign that followed.",
             "Peep walked away with the working capital to scale and a brand ambassador whose audience maps cleanly onto the category.",
         ],
-        image: "/images/work/brand-peep.png",
+        image: "/images/work/peep.png",
         classname: "bg-[#E1DFD2]",
     },
     {
@@ -40,28 +40,31 @@ export const WorkData = [
             "For KAAI, we serve as strategic advisors and brought Tiger Shroff on as brand ambassador. Tiger’s positioning, performance, energy and mass-premium reach gives KAAI both scale and aspiration in a single signing.",
             "Our advisory mandate covers the broader brand build: how to deploy the ambassador across content, campaigns and channel partnerships so the equity created translates into measurable category share.",
         ],
-        image: "/images/work/brand-kaai.png",
+        image: "/images/work/kaai.png",
         classname: "bg-[#1F3352]",
     },
-    {
-        id: 4,
-        title: "Aquatein",
-        slug: "",
-        description: "",
-        engagement: "",
-        category: "",
-        scope: "",
-        services: [
-            "Capital",
-            "Strategy",
-            "brand",
-        ],
-        detailHeading: "",
-        descArray: [
-        ],
-        image: "/images/work/aquatein.jpg",
-        classname: "bg-[#000000]",
-    },
+{
+    id: 4,
+    title: "Aquatein",
+    slug: "aquatein",
+    description: "Positioning India's first Protein Water as a modern functional beverage brand through strategic brand building and growth advisory.",
+    engagement: "Strategic Advisory + Brand Building",
+    category: "Health • Nutrition",
+    scope: "Brand strategy & growth advisory",
+    services: [
+        "Capital",
+        "Strategy",
+        "Brand",
+    ],
+    detailHeading: "Building the future of functional hydration.",
+    descArray: [
+        "Aquatein pioneered India's Protein Water category by making protein consumption simpler, lighter and more convenient for modern lifestyles.",
+        "Our engagement focuses on strengthening the brand's positioning, sharpening its market narrative and creating a scalable identity that resonates with health-conscious consumers seeking functional nutrition.",
+        "Beyond product innovation, our strategic advisory supports long-term brand growth, helping Aquatein build awareness, expand market presence and establish itself as a category-defining leader in functional hydration."
+    ],
+    image: "/images/work/Aquatein.jpeg",
+    classname: "bg-[#000000]",
+},
     {
         id: 5,
         title: "Flaunt Your Ink",
@@ -80,7 +83,7 @@ export const WorkData = [
             "Flaunt Your Ink is the engagement where every pillar of our operating system is deployed at once. We led the fundraise, onboarded Suniel Shetty and Haakim Aalim as celebrity co-founders, and built the brand from the ground up: identity, logo, packaging, marketing strategy, the full stack.",
             "The two co-founder structure is deliberate. Suniel brings mass-market trust and decades of affinity with the consumer. Haakim brings cultural credibility and direct access to a tastemaker audience. Together they give the brand both scale and authority from day one.",
         ],
-        image: "/images/work/fyi.webp",
+        image: "/images/work/Fyi.jpg",
         classname: "bg-[#FFFCF0]",
     },
     {
@@ -102,7 +105,7 @@ export const WorkData = [
             "The fit is being chosen deliberately. We're matching the brand to a face whose own sense of considered, quiet luxury maps onto where Trudys wants to sit in the market, rather than chasing reach for its own sake.",
             "Beyond the signing itself, we're shaping the brand narrative around the partnership so the ambassador lands as a strategic anchor from day one, carrying through product launches and retail conversations rather than sitting on top of a campaign.",
         ],
-        image: "/images/work/brand-trudys.png",
+        image: "/images/work/House_of_trudys.jpeg",
         classname: "bg-[#000000]",
     },
     {
@@ -123,7 +126,7 @@ export const WorkData = [
             "Excelgenics is a new nutraceutical company. NuHer is its first hero brand. We are running both launches in lockstep: strategy, digital, marketing, and the full go-to-market for the parent and the lead product. ",
             "To anchor NuHer in a category where trust is everything, we have signed Lisa Ray as the face of the brand. Her credibility in the wellness space gives the partnership a depth that surface-level endorsements cannot manufacture. A launch that lands with weight on day one, not after twelve months of paid spend trying to build it. ",
         ],
-        image: "/images/work/excelgenics.avif",
+        image: "/images/work/execlgenics.png",
         classname: "bg-[#F5F5F5]",
     },
     {
@@ -144,7 +147,7 @@ export const WorkData = [
             "Elyara is a dermal filler entering a category where the doctor is the channel and credibility is currency. We are leading the brand build from the ground up: positioning, narrative, and the medical-first story that gives clinicians a reason to recommend it.",
             "The GTM runs in two waves. First, a seeding programme placing Elyara with 50+ doctors who set the bar in aesthetic medicine. Their adoption becomes the proof point for the consumer-facing launch that follows. Practitioner trust first, then patient discovery. Not the other way around. ",
         ],
-        image: "/images/work/elyara.png",
+        image: "/images/work/elyara.jpeg",
         classname: "bg-[#1666BA]",
     },
 ];

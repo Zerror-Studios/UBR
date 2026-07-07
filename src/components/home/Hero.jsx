@@ -238,6 +238,30 @@ const Hero = () => {
     }
   }, [isMobile]);
 
+useGSAP(() => {
+  const tl = gsap.timeline({
+    repeat: -1,
+    yoyo: true,
+     repeatDelay: 0.5,
+    defaults: {
+      duration: 0.8,
+      ease: "power2.inOut",
+    },
+  });
+
+  tl.to(".cont_anim_1", {
+    clipPath: "polygon(5% 0%, 100% 0%, 100% 0%, 5% 90%)",
+  })
+  .to(
+    ".cont_anim_2",
+    {
+      clipPath: "polygon(95% 10%, 95% 10%, 95% 100%, 0% 100%)",
+    },
+    "<"
+  );
+});
+
+
   return (
     <>
       {!isMobile && (
@@ -306,6 +330,28 @@ const Hero = () => {
               </div>
 
               <div className="top-full absolute z-[100] w-full h-full center over_txt bg-[#4688F0] ">
+                <div className="relative w-full h-full center "                >
+
+                <div className=" absolute bottom-20 z-1000 center">
+                  <div
+                  className=" cont_anim_1  absolute  bg-[#d80000]"
+                  style={{
+                    width: "3rem",
+                    aspectRatio: "6 / 5",
+                    clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 100%)",
+                  }}
+                >
+                </div>
+                <div
+                  className=" cont_anim_2 absolute  bg-[#d80000]"
+                  style={{
+                    width: "3rem",
+                    aspectRatio: "6 / 5",
+                    clipPath: "polygon(100% 0%, 100% 0%, 100% 100%, 0% 100%)",
+                  }}
+                >
+                </div>
+                </div>
                 
                 <p
                   className="anim_par uppercase diagramm text-4xl lg:text-[3.5rem] font-semibold padding w-full md:w-[82%] text-center leading-tight text-white whitespace-normal"
@@ -314,6 +360,8 @@ const Hero = () => {
                   profitably. We back founders launching new ventures and operators reigniting
                   established ones.
                 </p>
+
+                </div>
               </div>
 
               <div className=" card_paren top-full absolute z-[200] w-full h-full inset-0 ">

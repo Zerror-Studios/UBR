@@ -82,9 +82,9 @@ export const WorksList = () => {
             gsap.utils.toArray(".proj_img").forEach((img) => {
                 gsap.fromTo(
                     img,
-                    { y: -200 },
+                    { y: -150 },
                     {
-                        y: 200,
+                        y: 150,
                         ease: "none",
                         scrollTrigger: {
                             trigger: img.parentElement,
@@ -120,7 +120,7 @@ export const WorksList = () => {
                         href={`/work/${item.slug}`} key={i} className={`proj_paren w-full  aspect-square md:aspect-video center text-white relative overflow-hidden ${item.classname}`}>
 
                     
-                        <Image width={400} height={500}  src={item.image} className={` proj_img `} alt="" />
+                        <Image fill src={item.image} className={` cover proj_img `} alt="" />
                         <h3
                             className="md:font-semibold mix-blend-difference  absolute bottom-5 leading-none md:bottom-20 z-10 uppercase text-center"
                         >
