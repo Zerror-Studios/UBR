@@ -97,7 +97,7 @@ const AdvisoryBg = () => (
             <g className="orbit orbit-3">
                 <circle cx="360" cy="200" r="4" fill="#4688F0" />
             </g>
-            <circle className="core" cx="200" cy="200" r="10" fill="#4688F0" />
+            <circle className="core" cx="200" cy="200" r="10" fill="#F20908" />
         </svg>
     </div>
 );

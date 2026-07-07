@@ -69,18 +69,33 @@ struct ColorStop {
   float position;
 };
 
-#define COLOR_RAMP(colors, factor, finalColor) {              \
-  int index = 0;                                            \
-  for (int i = 0; i < 2; i++) {                               \
-     ColorStop currentColor = colors[i];                    \
-     bool isInBetween = currentColor.position <= factor;    \
-     index = int(mix(float(index), float(i), float(isInBetween))); \
-  }                                                         \
-  ColorStop currentColor = colors[index];                   \
-  ColorStop nextColor = colors[index + 1];                  \
-  float range = nextColor.position - currentColor.position; \
-  float lerpFactor = (factor - currentColor.position) / range; \
-  finalColor = mix(currentColor.color, nextColor.color, lerpFactor); \
+#define COLOR_RAMP(colors, factor, finalColor) {              \\
+  int index = 0;                                            \\
+  for (int i = 0; i < 2; i++) {                               \\
+     ColorStop currentColor = colors[i];                    \\
+     bool isInBetween = currentColor.position <= factor;    \\
+     index = int(mix(float(index), float(i), float(isInBetween))); \\
+  }                                                         \\
+  ColorStop currentColor = colors[index];                   \\
+  ColorStop nextColor = colors[index + 1];                  \\
+  float range = nextColor.position - currentColor.position; \\
+  float lerpFactor = (factor - currentColor.position) / range; \\
+  finalColor = mix(currentColor.color, nextColor.color, lerpFactor); \\
+}
+
+float sdLine(vec2 p, vec2 a, vec2 b, float aspect) {
+    a.x *= aspect;
+    b.x *= aspect;
+    p.x *= aspect;
+    vec2 pa = p - a, ba = b - a;
+    float h = clamp( dot(pa,ba)/dot(ba,ba), 0.0, 1.0 );
+    return length( pa - ba*h );
+}
+
+float sdPoint(vec2 p, vec2 a, float aspect) {
+    a.x *= aspect;
+    p.x *= aspect;
+    return length(p - a);
 }
 
 void main() {
@@ -93,19 +108,95 @@ void main() {
   
   vec3 rampColor;
   COLOR_RAMP(colors, uv.x, rampColor);
-  
-  float height = snoise(vec2(uv.x * 2.0 + uTime * 0.1, uTime * 0.25)) * 0.5 * uAmplitude;
-  height = exp(height);
-  height = (uv.y * 2.0 - height + 0.2);
-float intensity = smoothstep(-0.5, 0.3, height);
-  
-  float midPoint = 0.20;
-  float auroraAlpha = smoothstep(midPoint - uBlend * 0.5, midPoint + uBlend * 0.5, intensity);
-  
-vec3 auroraColor = rampColor * intensity * 1.2;
-vec3 finalColor = mix(vec3(1.0), auroraColor, intensity);
 
-fragColor = vec4(finalColor, 1.0);
+  float aspect = uResolution.x / uResolution.y;
+  vec2 gridUV = uv * vec2(20.0 * aspect, 20.0);
+  vec2 gridLocal = fract(gridUV);
+  
+  float gridThickness = 0.03;
+  float gridX = smoothstep(1.0 - gridThickness, 1.0, gridLocal.x) + smoothstep(gridThickness, 0.0, gridLocal.x);
+  float gridY = smoothstep(1.0 - gridThickness, 1.0, gridLocal.y) + smoothstep(gridThickness, 0.0, gridLocal.y);
+  float grid = max(gridX, gridY);
+  
+  float timeOffset = uTime * 0.15;
+  float amplitude = uAmplitude > 0.0 ? uAmplitude : 1.0;
+  
+  const int NUM_POINTS = 12;
+  vec2 pts[12];
+  
+  for(int i = 0; i < NUM_POINTS; i++) {
+      float baseX = float(i) / float(NUM_POINTS - 1);
+      float nx = baseX * 1.5;
+      
+      float trend = 0.25 + baseX * 0.6;
+      float noiseY1 = snoise(vec2(nx, timeOffset)) * 0.15;
+      float maskY = smoothstep(-0.2, 0.5, snoise(vec2(nx * 1.5, timeOffset * 0.8)));
+      float noiseY2 = snoise(vec2(nx * 3.0, timeOffset * 1.2)) * 0.06 * maskY;
+      float y = trend + (noiseY1 + noiseY2) * amplitude;
+      
+      float noiseX = snoise(vec2(nx + 10.0, timeOffset * 0.8)) * 0.05 * amplitude;
+      if (i == 0 || i == NUM_POINTS - 1) noiseX = 0.0; 
+      float x = baseX + noiseX;
+      
+      pts[i] = vec2(x, y);
+  }
+  
+  vec2 p0 = pts[0];
+  vec2 p1 = pts[1];
+  for(int i = 0; i < NUM_POINTS - 1; i++) {
+      if(uv.x >= pts[i].x && uv.x <= pts[i+1].x) {
+          p0 = pts[i];
+          p1 = pts[i+1];
+          break;
+      }
+  }
+  if(uv.x < pts[0].x) { p0 = pts[0]; p1 = pts[1]; }
+  if(uv.x > pts[NUM_POINTS-1].x) { p0 = pts[NUM_POINTS-2]; p1 = pts[NUM_POINTS-1]; }
+  
+  float t = 0.0;
+  if (p1.x - p0.x != 0.0) {
+      t = (uv.x - p0.x) / (p1.x - p0.x);
+  }
+  t = clamp(t, 0.0, 1.0);
+  
+  float graphLineY = mix(p0.y, p1.y, t);
+  float distY = uv.y - graphLineY;
+  float fill = smoothstep(-0.6, 0.0, distY) * (1.0 - step(0.0, distY));
+  
+  float minDistLine = 100.0;
+  float minDistPoint = 100.0;
+  
+  for(int i = 0; i < NUM_POINTS; i++) {
+      minDistPoint = min(minDistPoint, sdPoint(uv, pts[i], aspect));
+      if(i > 0) {
+          minDistLine = min(minDistLine, sdLine(uv, pts[i-1], pts[i], aspect));
+      }
+  }
+  
+  float lineThickness = 0.005;
+  float lineGlow = smoothstep(lineThickness + 0.003, lineThickness, minDistLine);
+  float softGlow = smoothstep(0.03, 0.0, minDistLine);
+  
+  float pointOuterRadius = 0.012;
+  float pointInnerRadius = 0.006;
+  
+  float pointOuter = smoothstep(pointOuterRadius + 0.002, pointOuterRadius, minDistPoint);
+  float pointInner = smoothstep(pointInnerRadius + 0.002, pointInnerRadius, minDistPoint);
+  
+  float graphAlpha = min(lineGlow + softGlow * 0.5 + fill * 0.4 + pointOuter, 1.0);
+  
+  vec3 gridColor = rampColor;
+  float gridAlpha = grid * 0.06 * (1.0 - fill * 0.8);
+  
+  vec3 graphColor = mix(rampColor, vec3(1.0), softGlow * 0.3); 
+  
+  vec3 bg = vec3(1.0);
+  vec3 withGrid = mix(bg, gridColor, gridAlpha);
+  vec3 finalColor = mix(withGrid, graphColor, graphAlpha);
+  
+  finalColor = mix(finalColor, vec3(1.0), pointInner);
+
+  fragColor = vec4(finalColor, 1.0);
 }
 `;
 

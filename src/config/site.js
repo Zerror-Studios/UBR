@@ -9,6 +9,10 @@ export const siteConfig = {
   keywords: [
     "UBR",
     "DISRPTVE",
+    "ubrdisrptve",
+    "ubr disrptve",
+    "ubr disruptive",
+    "ubrdisruptive",
     "venture builder India",
     "consumer brand advisory",
     "capital advisory",
@@ -18,9 +22,9 @@ export const siteConfig = {
   ],
   contact: {
     phone: "",
-    email: "binoykhimji@gmail.com",
+    email: "binoy@ubrcapital.com",
     emails: [
-      "binoykhimji@gmail.com",
+      "binoy@ubrcapital.com",
       "ashish@disrptve.com",
       "kaushik@disrptve.com",
     ],

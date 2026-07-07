@@ -11,7 +11,7 @@ const foundersData = [
         role: "Co-Founder",
         company: "UBR",
         name: "Binoy Khimji",
-        email: "binoykhimji@gmail.com",
+        email: "binoy@ubrcapital.com",
     },
     {
         role: "Co-Founder",

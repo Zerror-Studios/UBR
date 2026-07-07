@@ -86,9 +86,7 @@ export async function POST(req) {
     await transporter.sendMail({
       from: `"Zerror Studios" <${process.env.NEXT_PUBLIC_EMAIL_USER}>`,
       to: [
-        process.env.NEXT_PUBLIC_CLIENT_EMAIL_1,
-        process.env.NEXT_PUBLIC_CLIENT_EMAIL_2,
-        process.env.NEXT_PUBLIC_CLIENT_EMAIL_3,
+        process.env.NEXT_PUBLIC_CLIENT_EMAIL,
       ],
       subject: `UBR Contact Form Submission - ${fullName}`,
       html: htmlTemplate,

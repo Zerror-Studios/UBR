@@ -306,6 +306,7 @@ const Hero = () => {
               </div>
 
               <div className="top-full absolute z-[100] w-full h-full center over_txt bg-[#4688F0] ">
+                
                 <p
                   className="anim_par uppercase diagramm text-4xl lg:text-[3.5rem] font-semibold padding w-full md:w-[82%] text-center leading-tight text-white whitespace-normal"
                 >
