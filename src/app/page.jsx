@@ -14,10 +14,12 @@ const HomePage = () => {
       <MobileHero />
       <MacroPicture />
       <div className="bg-[#4688F0] ">
-        <OurThesis />
         <WhatWeDo />
       </div>
       <SelectedWork />
+      <div className="bg-[#4688F0] ">
+        <OurThesis />
+        </div>
     </>
   );
 };
