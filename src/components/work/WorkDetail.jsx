@@ -11,6 +11,7 @@ import { Link } from 'next-view-transitions'
 import Marquee from 'react-fast-marquee'
 import Image from 'next/image'
 import Threads from '../animation/Threads'
+import SectionHero from '../common/SectionHero'
 gsap.registerPlugin(ScrollTrigger, SplitText)
 
 const WorkDetail = () => {
@@ -149,22 +150,11 @@ const WorkDetail = () => {
           </p>
         </Marquee>
       </div>
-      <div className=" content_box w-full relative overflow-hidden text-white bg-[#4688F0]  ">
-        <div className='container h-[60vh]! overflow-hidden items-end flex pointer-events-none pb-16'>
-          <div className="space-y-5 w-full  relative z-10 ">
-            <h1 className=' heading_split md:w-[80%] leading-none  '>{work.title}</h1>
-            <p className=' paragraph_split md:w-[45%] leading-tight'>{work.description}</p>
-          </div>
-        </div>
-
-           <div className="absolute w-full h-full inset-0 z-10 max-lg:hidden">
-                <Threads
-                    amplitude={3}
-                    distance={0.45}
-                    enableMouseInteraction
-                />
-            </div>
-      </div>
+      <SectionHero
+        btnText={"About Project"}
+        heading={work.title}
+        desc={work.description}
+      />
 
       <div className={`w-full relative  center aspect-video ${work.classname}`}>
         <Image fill className='cover' src={work.image} alt="img" />
