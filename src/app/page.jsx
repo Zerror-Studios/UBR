@@ -17,9 +17,7 @@ const HomePage = () => {
         <WhatWeDo />
       </div>
       <SelectedWork />
-      <div className="bg-[#4688F0] ">
-        <OurThesis />
-        </div>
+      <OurThesis />
     </>
   );
 };
