@@ -77,25 +77,27 @@ export const WorksList = () => {
 
     const container = useRef(null);
 
-    useGSAP(
-        () => {
-            gsap.utils.toArray(".proj_img").forEach((img) => {
-                gsap.fromTo(
-                    img,
-                    { y: -150 },
-                    {
-                        y: 150,
-                        ease: "none",
-                        scrollTrigger: {
-                            trigger: img.parentElement,
-                            start: "top bottom",
-                            end: "bottom top",
-                            scrub: true,
-                        },
-                    }
-                );
-            });
-        },
+    useGSAP(() => {
+
+        if (window.innerWidth < 1020) return
+
+        gsap.utils.toArray(".proj_img").forEach((img) => {
+            gsap.fromTo(
+                img,
+                { y: -150 },
+                {
+                    y: 150,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: img.parentElement,
+                        start: "top bottom",
+                        end: "bottom top",
+                        scrub: true,
+                    },
+                }
+            );
+        });
+    },
         { scope: container }
     );
     return (
@@ -119,7 +121,7 @@ export const WorksList = () => {
                         onMouseLeave={handleMouseLeave}
                         href={`/work/${item.slug}`} key={i} className={`proj_paren w-full  aspect-square md:aspect-video center text-white relative overflow-hidden ${item.classname}`}>
 
-                    
+
                         <Image fill src={item.image} className={` cover proj_img `} alt="" />
                         <h3
                             className="md:font-semibold mix-blend-difference  absolute bottom-5 leading-none md:bottom-20 z-10 uppercase text-center"

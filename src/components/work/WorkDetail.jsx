@@ -214,7 +214,7 @@ const WorkDetail = () => {
               key={i} href={`/work/${item.slug}`} className=" w-full space-y-2 group cursor-pointer ">
               <div className={`w-full center aspect-4/3 overflow-hidden rounded-md  ${item.classname}`}>
                 <div data-img-effect className="w-full h-full relative center">
-                  <Image fill className='cover max-sm:scale-50 md:group-hover:scale-110 transition-all duration-300' src={item.image} alt="img" />
+                  <Image fill className='cover   md:group-hover:scale-110 transition-all duration-300' src={item.image} alt="img" />
                 </div>
               </div>
               <div className="">

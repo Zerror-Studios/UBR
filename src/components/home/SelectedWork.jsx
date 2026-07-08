@@ -91,33 +91,33 @@ const SelectedWork = () => {
                 </Marquee>
             </div>
             <div className="space-y-5 md:space-y-16">
-            <SectionHeading
-                btnText="Selected work"
-                heading="Brands we have backed."
-                desc={<><p>Capital and celebrity, structured as a single move.  Strategic advisory anchored to talent. A full-stack engagement that compounds.</p></>}
-            />
-            <div className="container grid md:grid-cols-2 gap-x-5 gap-y-10">
-                {WorkData.slice(0,4).map((item, i) => (
-                    <Link onMouseEnter={(e) => handleMouseEnter(e, item.title)}
-                        onMouseMove={handleMouseMove}
-                        onMouseLeave={handleMouseLeave} key={i} href={`/work/${item.slug}`} className=" w-full space-y-4 group cursor-pointer">
-                        <div className={`w-full center aspect-video overflow-hidden rounded-sm  ${item.classname} `}>
-                            <div data-img-effect className="w-full h-full relative center">
-                                <Image fill className=' cover max-sm:scale-50 md:group-hover:scale-110 transition-all duration-300' src={item.image} alt="img" />
+                <SectionHeading
+                    btnText="Selected work"
+                    heading="Brands we have backed."
+                    desc={<><p>Capital and celebrity, structured as a single move.  Strategic advisory anchored to talent. A full-stack engagement that compounds.</p></>}
+                />
+                <div className="container grid md:grid-cols-2 gap-x-5 gap-y-10">
+                    {WorkData.slice(0, 4).map((item, i) => (
+                        <Link onMouseEnter={(e) => handleMouseEnter(e, item.title)}
+                            onMouseMove={handleMouseMove}
+                            onMouseLeave={handleMouseLeave} key={i} href={`/work/${item.slug}`} className=" w-full space-y-4 group cursor-pointer">
+                            <div className={`w-full center aspect-video overflow-hidden rounded-sm  ${item.classname} `}>
+                                <div data-img-effect className="w-full h-full relative center">
+                                    <Image fill className=' cover   md:group-hover:scale-110 transition-all duration-300' src={item.image} alt="img" />
+                                </div>
                             </div>
-                        </div>
-                        <div className="">
-                            <h6 className='opacity-80'>{item.engagement}</h6>
-                            <h5 className='  md:font-semibold flex items-center gap-x-2'>{item.title}</h5>
-                        </div>
-                    </Link>
-                ))}
-            </div>
+                            <div className="">
+                                <h6 className='opacity-80'>{item.engagement}</h6>
+                                <h5 className='  md:font-semibold flex items-center gap-x-2'>{item.title}</h5>
+                            </div>
+                        </Link>
+                    ))}
+                </div>
             </div>
 
             <div className="w-full mt-12 center">
-                 <Link href={"/work"} className={`  bg-[#4688F0] block w-fit  text-[#FFFFFF] uppercase aeonik text-sm px-4 border rounded-sm hover:text-[#4688F0] border-transparent hover:border-[#4688F0] hover:bg-transparent py-2.5 leading-none relative overflow-hidden  transition-all duration-300 `}>
-                  View More
+                <Link href={"/work"} className={`  bg-[#4688F0] block w-fit  text-[#FFFFFF] uppercase aeonik text-sm px-4 border rounded-sm hover:text-[#4688F0] border-transparent hover:border-[#4688F0] hover:bg-transparent py-2.5 leading-none relative overflow-hidden  transition-all duration-300 `}>
+                    View More
                 </Link>
             </div>
         </div>
