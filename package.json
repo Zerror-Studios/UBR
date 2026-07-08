@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.6.1",
     "@remixicon/react": "^4.6.0",
     "gsap": "^3.13.0",
     "hamburger-react": "^2.5.2",

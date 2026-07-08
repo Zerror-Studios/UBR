@@ -6,7 +6,6 @@ import gsap from 'gsap'
 import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 import SplitText from 'gsap/dist/SplitText'
 import Image from 'next/image';
-import GradientBlinds from '../animation/GradientBlinds';
 gsap.registerPlugin(ScrollTrigger, SplitText)
 
 const modelCards = [

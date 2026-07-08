@@ -5,6 +5,7 @@ import SectionHeading from "../common/SectionHeading";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import Noise from "../animation/Noise";
 gsap.registerPlugin(ScrollTrigger);
 
 const engagementData = [
@@ -249,6 +250,15 @@ const WhatWeDo = () => {
     return (
         <section className="what_we_do_paren md:h-[300vh] max-sm:py-12 text-white  relative">
             <div className="md:sticky top-0 space-y-5 md:space-y-16 md:h-screen w-full flex flex-col justify-center overflow-hidden">
+              <div className="w-full h-full absolute inset-0">
+                    <Noise
+                      patternSize={250}
+                      patternScaleX={2}
+                      patternScaleY={2}
+                      patternRefreshInterval={2}
+                      patternAlpha={15}
+                    />
+                  </div>
                 <div className="">
                     <SectionHeading
                         btnText={"what we do"}

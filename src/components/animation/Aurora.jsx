@@ -111,6 +111,7 @@ void main() {
 
   float aspect = uResolution.x / uResolution.y;
   vec2 gridUV = uv * vec2(20.0 * aspect, 20.0);
+  gridUV.y += uTime * 0.44;
   vec2 gridLocal = fract(gridUV);
   
   float gridThickness = 0.03;
@@ -185,8 +186,8 @@ void main() {
   
   float graphAlpha = min(lineGlow + softGlow * 0.5 + fill * 0.4 + pointOuter, 1.0);
   
-  vec3 gridColor = rampColor;
-  float gridAlpha = grid * 0.06 * (1.0 - fill * 0.8);
+  vec3 gridColor = rampColor * 0.4;
+  float gridAlpha = grid * 0.15 * (1.0 - fill * 0.8);
   
   vec3 graphColor = mix(rampColor, vec3(1.0), softGlow * 0.3); 
   

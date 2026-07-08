@@ -4,9 +4,7 @@ import gsap from 'gsap'
 import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 import SplitText from 'gsap/dist/SplitText'
 import { useGSAP } from '@gsap/react'
-import ColorBends from '../animation/ColorBends'
-import GradientBlinds from '../animation/GradientBlinds';
-import Threads from '../animation/Threads'
+import Beams from '../animation/Beams'
 
 gsap.registerPlugin(ScrollTrigger, SplitText)
 
@@ -70,11 +68,18 @@ const SectionHero = ({ btnText, heading, desc }) => {
     })
     return (
         <div className=' content_box container h-[60vh]!  overflow-hidden items-end flex bg-[#4688F0] text-white pb-16'>
-            <div className="absolute w-full h-full inset-0 z-10 max-lg:hidden">
-                <Threads
-                    amplitude={3}
-                    distance={0.45}
-                    enableMouseInteraction
+            <div className="absolute w-full h-full inset-0 z-10 max-lg:hidden ">
+                <div className="absolute w-full h-full inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,#4688F0_60%)] z-10"></div>
+                <Beams
+                    beamWidth={3}
+                    beamHeight={40}
+                    beamNumber={15}
+                    lightColor="#0040a8"
+                    color='#0040a8'
+                    speed={4}
+                    noiseIntensity={0.5}
+                    scale={0.2}
+                    rotation={30}
                 />
             </div>
             <div className="space-y-5 w-full pointer-events-none  relative z-10 ">

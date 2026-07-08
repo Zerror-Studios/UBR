@@ -6,6 +6,7 @@ import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 import SplitText from 'gsap/dist/SplitText'
 import Image from 'next/image';
 import Aurora from '../animation/Aurora';
+import Noise from '../animation/Noise';
 gsap.registerPlugin(ScrollTrigger, SplitText)
 
 const modelCards = [
@@ -81,7 +82,7 @@ const Hero = () => {
       v1.removeEventListener("loadedmetadata", sync);
     };
   }, []);
-  
+
 
   useEffect(() => {
     const checkScreen = () => {
@@ -238,28 +239,28 @@ const Hero = () => {
     }
   }, [isMobile]);
 
-useGSAP(() => {
-  const tl = gsap.timeline({
-    repeat: -1,
-    yoyo: true,
-     repeatDelay: 0.5,
-    defaults: {
-      duration: 0.8,
-      ease: "power2.inOut",
-    },
-  });
+  useGSAP(() => {
+    const tl = gsap.timeline({
+      repeat: -1,
+      yoyo: true,
+      repeatDelay: 0.5,
+      defaults: {
+        duration: 0.8,
+        ease: "power2.inOut",
+      },
+    });
 
-  tl.to(".cont_anim_1", {
-    clipPath: "polygon(5% 0%, 100% 0%, 100% 0%, 5% 90%)",
-  })
-  .to(
-    ".cont_anim_2",
-    {
-      clipPath: "polygon(95% 10%, 95% 10%, 95% 100%, 0% 100%)",
-    },
-    "<"
-  );
-});
+    tl.to(".cont_anim_1", {
+      clipPath: "polygon(5% 0%, 100% 0%, 100% 0%, 5% 90%)",
+    })
+      .to(
+        ".cont_anim_2",
+        {
+          clipPath: "polygon(95% 10%, 95% 10%, 95% 100%, 0% 100%)",
+        },
+        "<"
+      );
+  });
 
 
   return (
@@ -330,36 +331,45 @@ useGSAP(() => {
               </div>
 
               <div className="top-full absolute z-[100] w-full h-full center over_txt bg-[#4688F0] ">
-                <div className="relative w-full h-full center "                >
+                <div className="relative w-full h-full center ">
+                  <div className="w-full h-full absolute inset-0">
+                    <Noise
+                      patternSize={250}
+                      patternScaleX={2}
+                      patternScaleY={2}
+                      patternRefreshInterval={2}
+                      patternAlpha={15}
+                    />
+                  </div>
 
-                <div className=" absolute bottom-20 z-1000 center">
-                  <div
-                  className=" cont_anim_1  absolute  bg-[#d80000]"
-                  style={{
-                    width: "3rem",
-                    aspectRatio: "6 / 5",
-                    clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 100%)",
-                  }}
-                >
-                </div>
-                <div
-                  className=" cont_anim_2 absolute  bg-[#d80000]"
-                  style={{
-                    width: "3rem",
-                    aspectRatio: "6 / 5",
-                    clipPath: "polygon(100% 0%, 100% 0%, 100% 100%, 0% 100%)",
-                  }}
-                >
-                </div>
-                </div>
-                
-                <p
-                  className="anim_par uppercase diagramm text-4xl lg:text-[3.5rem] font-semibold padding w-full md:w-[82%] text-center leading-tight text-white whitespace-normal"
-                >
-                  UBR DISRPTVE is a venture builder for consumer brands that want to scale
-                  profitably. We back founders launching new ventures and operators reigniting
-                  established ones.
-                </p>
+                  <div className=" absolute bottom-20 z-1000 center">
+                    <div
+                      className=" cont_anim_1  absolute  bg-[#d80000]"
+                      style={{
+                        width: "3rem",
+                        aspectRatio: "6 / 5",
+                        clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 100%)",
+                      }}
+                    >
+                    </div>
+                    <div
+                      className=" cont_anim_2 absolute  bg-[#d80000]"
+                      style={{
+                        width: "3rem",
+                        aspectRatio: "6 / 5",
+                        clipPath: "polygon(100% 0%, 100% 0%, 100% 100%, 0% 100%)",
+                      }}
+                    >
+                    </div>
+                  </div>
+
+                  <p
+                    className="anim_par uppercase diagramm text-4xl lg:text-[3.5rem] font-semibold padding w-full md:w-[82%] text-center leading-tight text-white whitespace-normal"
+                  >
+                    UBR DISRPTVE is a venture builder for consumer brands that want to scale
+                    profitably. We back founders launching new ventures and operators reigniting
+                    established ones.
+                  </p>
 
                 </div>
               </div>

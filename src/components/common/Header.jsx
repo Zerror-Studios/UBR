@@ -62,14 +62,14 @@ const Header = () => {
       duration: .6,
       ease: "expo.out",
     });
-    tl.to('.navLink', {
-      color: "white",
-      duration: .6,
-    }, 0);
-    tl.to('.navLinkBar', {
-      backgroundColor: "#ffffff",
-      duration: .6,
-    }, 0);
+    // tl.to('.navLink', {
+    //   color: "white",
+    //   duration: .6,
+    // }, 0);
+    // tl.to('.navLinkBar', {
+    //   backgroundColor: "#ffffff",
+    //   duration: .6,
+    // }, 0);
   })
 
 

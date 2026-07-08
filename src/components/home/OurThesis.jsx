@@ -4,6 +4,7 @@ import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import React, { useEffect, useRef } from 'react'
 import DotButton from '../common/DotButton';
 import { useGSAP } from '@gsap/react';
+import Noise from '../animation/Noise';
 gsap.registerPlugin(ScrollTrigger);
 
 const OurThesis = () => {
@@ -60,6 +61,15 @@ const OurThesis = () => {
     return (
         <div ref={containerRef} className=' border-b border-white/50  text-white w-full h-[300vh] relative'>
             <div className="container h-screen sticky! overflow-hidden top-0 md:flex ">
+                <div className="w-full h-full absolute inset-0">
+                    <Noise
+                      patternSize={250}
+                      patternScaleX={2}
+                      patternScaleY={2}
+                      patternRefreshInterval={2}
+                      patternAlpha={15}
+                    />
+                  </div>
                 <div className=" w-full md:w-1/2 max-sm:pt-20 h-fit md:h-screen flex flex-col gap-y-5 md:gap-y-20 justify-center">
                     <div className="space-y-5">
                         <DotButton text="The Outcome" className={"text-white!"} />

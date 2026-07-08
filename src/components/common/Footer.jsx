@@ -8,6 +8,7 @@ import React, { useRef } from 'react'
 import Button from './Button';
 import { Link } from 'next-view-transitions';
 import Image from 'next/image';
+import Noise from '../animation/Noise';
 gsap.registerPlugin(ScrollTrigger)
 
 const navLinks = [
@@ -162,6 +163,15 @@ const Footer = () => {
         </div>
       )}
       <div className=" main_footer -translate-y-px bg-[#4688F0]  overflow-hidden w-full  text-[#FFFFFF]  pt-14">
+        <div className="w-full h-full absolute inset-0">
+                    <Noise
+                      patternSize={250}
+                      patternScaleX={2}
+                      patternScaleY={2}
+                      patternRefreshInterval={2}
+                      patternAlpha={15}
+                    />
+                  </div>
         <div className="container h-[35vh]! grid   md:grid-cols-6">
           <div className="space-y-5 h-full  col-span-3">
             <img className='w-[25%]' src="/logo.png" alt="img" />
