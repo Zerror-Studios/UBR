@@ -172,7 +172,7 @@ const Footer = () => {
                       patternAlpha={15}
                     />
                   </div>
-        <div className="container h-[35vh]! grid   md:grid-cols-6">
+        <div className="container h-[35vh]! grid   md:grid-cols-5">
           <div className="space-y-5 h-full  col-span-3">
             <img className='w-[25%]' src="/logo.png" alt="img" />
           </div>
@@ -217,20 +217,6 @@ const Footer = () => {
                   {email}
                 </Link>
               ))}
-            </div>
-          </div>
-          <div className=" h-full space-y-5 md:*:pl-12">
-            <p className=' uppercase text-sm aeonik' >Socials</p>
-            <div className="   space-y-2">
-              <div className=' relative w-fit block cursor-pointer hover:opacity-100 transition-all duration-150 opacity-60 text-sm group'>
-                <span
-                  className={` absolute left-0 bottom-0 h-[1.5px] rounded-full w-full bg-[#FFFFFF] transition-transform duration-300 ease-out scale-x-0 origin-left group-hover:scale-x-100 `}
-                ></span>
-                LinkedIn</div> <div className=' relative w-fit block cursor-pointer hover:opacity-100 transition-all duration-150 opacity-60 text-sm group'>
-                <span
-                  className={`  absolute left-0 bottom-0 h-[1.5px] rounded-full w-full bg-[#FFFFFF]   transition-transform duration-300 ease-out scale-x-0 origin-left group-hover:scale-x-100   `}
-                ></span>
-                Instagram</div>
             </div>
           </div>
         </div>
