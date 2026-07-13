@@ -172,11 +172,11 @@ const Footer = () => {
                       patternAlpha={15}
                     />
                   </div>
-        <div className="container h-[35vh]! grid   md:grid-cols-5">
-          <div className="space-y-5 h-full  col-span-3">
+        <div className="container h-[35vh]! grid grid-cols-2  md:grid-cols-5">
+          <div className="space-y-5 h-full col-span-2 md:col-span-3">
             <img className='w-[25%]' src="/logo.png" alt="img" />
           </div>
-          <div className=" h-full space-y-5">
+          <div className=" h-full space-y-5 col-span-1">
             <p className=' uppercase text-sm aeonik'>Sitemap</p>
             <div className="   space-y-2">
               {navLinks.map((link, i) => {
@@ -200,7 +200,7 @@ const Footer = () => {
               })}
             </div>
           </div>
-          <div className=" h-full space-y-5 max-sm:pl-5">
+          <div className=" h-full space-y-5 col-span-1">
             <p className=' uppercase text-sm aeonik'>Contact</p>
             <div className="space-y-2">
               {emails.map((email) => (
