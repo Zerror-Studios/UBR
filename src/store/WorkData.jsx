@@ -23,8 +23,8 @@ export const WorkData = [
     },
     {
         id: 2,
-        title: "KAAI × Tiger Shroff",
-        slug: "kaai-tiger-shroff",
+        title: "KAAI",
+        slug: "kaai",
         description: "Performance, energy and aspiration, fused into a single signing that gives the brand both scale and depth.",
         engagement: "Strategic Advisory + Brand Ambassador",
         category: "Fashion • Performance",

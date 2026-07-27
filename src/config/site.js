@@ -77,9 +77,9 @@ export const siteRoutes = [
     priority: 0.7,
   },
   {
-    path: "/work/kaai-tiger-shroff",
-    label: "KAAI x Tiger Shroff",
-    title: "KAAI x Tiger Shroff Case Study | Brand & Celebrity Partnership",
+    path: "/work/kaai",
+    label: "KAAI",
+    title: "KAAI Case Study | Brand & Celebrity Partnership",
     description:
       "Performance, energy and aspiration, fused into a single signing that gives the brand both scale and depth.",
     priority: 0.7,
