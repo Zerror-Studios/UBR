@@ -178,41 +178,7 @@ const ContactForm = () => {
             <ToastContainer position="top-right" autoClose={3000} />
 
             <div className="container pt-12 md:pt-24">
-                <div className="w-full grid grid-cols-1 md:grid-cols-2">
-                    <div className=" md:pr-32 space-y-5">
-                        <DotButton text="Direct" className={"md:ml-5"} />
-                        <div className=" w-full   space-y-4 ">
-                            {foundersData.map((item, index) => (
-                                <div
-                                    key={index}
-                                    className=" relative transition-all duration-300  border-b pb-2 md:p-5 flex w-full  justify-between group cursor-pointer border-black/10  hover:text-white  "
-                                >
-                                    <div className="absolute bg-[#4688F0] group-hover:h-full w-full z-[-1] left-0 h-0 bottom-0 transition-all duration-300"></div>
-                                    <div className="space-y-5">
-                                        <div className="">
-                                            <h6 className="flex items-center gap-2  text-sm uppercase ">
-                                                <span>{item.role}</span>
-                                                <span>•</span>
-                                                <span>{item.company}</span>
-                                            </h6>
-                                            <h5 className="">
-                                                {item.name}
-                                            </h5>
-                                        </div>
-                                        <a
-                                            href={`mailto:${item.email}`}
-                                            className="inline-block  "
-                                        >
-                                            {item.email}
-                                        </a>
-                                    </div>
-                                    <div className={`size-10 center rounded-full border border-black/10 group-hover:bg-[#ffffff] group-hover:text-[#4688F0] transition-all duration-300`}>
-                                        <RiArrowDownLine size={18} className='group-hover:-rotate-[135deg] -rotate-90 transition-all duration-300' />
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
+                <div className="w-full max-w-3xl mx-auto">
                     <div className=" max-sm:mt-12 space-y-5 md:space-y-8  h-full relative">
                         <DotButton text="start a conversation" />
                         <form className=" space-y-5 md:space-y-10">

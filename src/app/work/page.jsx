@@ -7,7 +7,6 @@ const page = () => {
   return (
     <>
         <SectionHero
-        btnText={"Selected work"}
         heading={"Brands we have backed."}
         desc={"Capital and celebrity, structured as a single move. Strategic advisory anchored to talent. Full-stack engagements that compound."}
       />

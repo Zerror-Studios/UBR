@@ -44,7 +44,6 @@ const TermsAndConditionsPage = () => {
   return (
     <>
       <SectionHero
-        btnText="Terms"
         heading="Terms & Conditions"
         desc="Payment, tax, and company information for UBR Disrptve LLP engagements."
       />

@@ -22,12 +22,7 @@ export const siteConfig = {
   ],
   contact: {
     phone: "",
-    email: "binoy@ubrcapital.com",
-    emails: [
-      "binoy@ubrcapital.com",
-      "ashish@disrptve.com",
-      "kaushik@disrptve.com",
-    ],
+    email: "team@ubrdisrptve",
   },
   address: {
     street: "",

@@ -151,7 +151,6 @@ const WorkDetail = () => {
         </Marquee>
       </div>
       <SectionHero
-        btnText={"About Project"}
         heading={work.title}
         desc={work.description}
       />

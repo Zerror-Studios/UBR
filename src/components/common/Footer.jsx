@@ -29,10 +29,8 @@ const navLinks = [
     href: "/team"
   },
 ]
-const emails = [
-  "binoy@ubrcapital.com",
-  "ashish@disrptve.com",
-  "kaushik@disrptve.com",
+export const emails = [
+  "team@ubrdisrptve",
 ];
 
 const Footer = () => {

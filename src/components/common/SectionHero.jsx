@@ -5,10 +5,17 @@ import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 import SplitText from 'gsap/dist/SplitText'
 import { useGSAP } from '@gsap/react'
 import Beams from '../animation/Beams'
+import { usePathname } from 'next/navigation'
+import { emails } from './Footer'
+import { Link } from 'next-view-transitions'
+import { RiArrowRightUpLine } from '@remixicon/react'
 
 gsap.registerPlugin(ScrollTrigger, SplitText)
 
 const SectionHero = ({ btnText, heading, desc }) => {
+
+    const pathname = usePathname()
+
     useGSAP(() => {
         const heading_split = SplitText.create(".heading_split", {
             type: "lines",
@@ -85,6 +92,23 @@ const SectionHero = ({ btnText, heading, desc }) => {
             <div className="space-y-5 w-full pointer-events-none  relative z-10 ">
                 <h1 className=' heading_split md:w-[80%] leading-none  '>{heading}</h1>
                 <p className=' paragraph_split md:w-[45%] leading-tight text-xl'>{desc}</p>
+                {pathname === "/contact" && (
+                    emails.map((email) => (
+                        <Link
+                            key={email}
+                            href={`mailto:${email}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="relative group w-fit pointer-events-auto flex items-center gap-x-1   cursor-pointer hover:opacity-100 transition-all duration-150 group"
+                        >
+                            <span
+                                className="absolute left-0 bottom-0 h-[1.5px] rounded-full w-full bg-[#FFFFFF]  transition-transform duration-300 ease-out   scale-x-0 origin-left group-hover:scale-x-100    "
+                            />
+                            {email}
+                            <RiArrowRightUpLine className='size-4 '/>
+                        </Link>
+                    ))
+                )}
             </div>
         </div>
     )
