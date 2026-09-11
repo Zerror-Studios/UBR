@@ -159,7 +159,7 @@ const WorkDetail = () => {
         <Image fill className='cover' src={work.image} alt="img" />
       </div>
       <div className="container py-12 md:py-24 md:grid grid-cols-6">
-        <div className="col-span-3 grid grid-cols-2 max-sm:gap-10 md:pr-20 ">
+        <div className="col-span-3  md:gap-y-14 h-fit grid grid-cols-2 max-sm:gap-10 md:pr-20 ">
 
           <div className="md:pr-10">
             <div className=" border-b border-black/50 mb-2 md:mb-5">

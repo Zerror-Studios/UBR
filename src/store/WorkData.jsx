@@ -8,17 +8,42 @@ export const WorkData = [
         category: "Beauty",
         scope: "12 months • Active",
         services: [
-            "Capital",
-            "Talent",
-            "Strategy"
+            "Peep Beauty Celebrity Co-Ownership",
+            "Talent Strategy",
+            "Growth Advisory"
         ],
-        detailHeading: "Two moves, structured as one.",
+        detailHeading: "Eyes Never Had Their Own Aisle… Until Now.",
         descArray: [
-            "Capital and celebrity, timed to give the round visible runway and fund the campaign that followed.",
-            "We led the fundraise for Peep and onboarded Triptii Dimri as the face of the brand in the same window. The ambassador signing was timed to give the round visible runway. The round was sized to fund the campaign that followed.",
-            "Peep walked away with the working capital to scale and a brand ambassador whose audience maps cleanly onto the category.",
+            (
+                <>
+                    <span className="block font-semibold mb-1">Finding the Right Fit</span>
+                    Four questions were put forth before starting:
+                    <br />
+                    Does Triptii being in this category make sense?
+                    <br />
+                    Does her audience resonate with what we’re building?
+                    <br />
+                    Will this hold trust beyond one campaign?
+                    <br />
+                    Is it wired into the business correctly?
+                    <br />
+                    Once all questions passed through, we moved to the next step.
+                </>
+            ),
+            (
+                <>
+                    <span className="block font-semibold mb-1">Triptii’s Role</span>
+                    Triptii is front and centre of the film as Peep Beauty&apos;s co-founder, giving the brand stronger credibility.
+                </>
+            ),
+            (
+                <>
+                    <span className="block font-semibold mb-1">The Product, In Focus</span>
+                    Peep&apos;s proposition is simple: coloured contact lenses and liquid eyeshadows designed specifically for Indian eyes and skin tones. We’ve shaped its growth strategy in parallel structured Triptii&apos;s involvement as a co-founder. The product that was built for Indian eyes, the audience Triptii already owns, and the commercial roadmap, are all designed to move as one tight knit eco-system.
+                </>
+            ),
         ],
-        image: "/images/work/peep.png",
+        image: "/images/work/peep.jpeg",
         classname: "bg-[#E1DFD2]",
     },
     {
@@ -43,28 +68,28 @@ export const WorkData = [
         image: "/images/work/kaai.png",
         classname: "bg-[#1F3352]",
     },
-{
-    id: 4,
-    title: "Aquatein",
-    slug: "aquatein",
-    description: "Positioning India's first Protein Water as a modern functional beverage brand through strategic brand building and growth advisory.",
-    engagement: "Strategic Advisory + Brand Building",
-    category: "Health • Nutrition",
-    scope: "Brand strategy & growth advisory",
-    services: [
-        "Capital",
-        "Strategy",
-        "Brand",
-    ],
-    detailHeading: "Building the future of functional hydration.",
-    descArray: [
-        "Aquatein pioneered India's Protein Water category by making protein consumption simpler, lighter and more convenient for modern lifestyles.",
-        "Our engagement focuses on strengthening the brand's positioning, sharpening its market narrative and creating a scalable identity that resonates with health-conscious consumers seeking functional nutrition.",
-        "Beyond product innovation, our strategic advisory supports long-term brand growth, helping Aquatein build awareness, expand market presence and establish itself as a category-defining leader in functional hydration."
-    ],
-    image: "/images/work/Aquatein.jpeg",
-    classname: "bg-[#000000]",
-},
+    {
+        id: 4,
+        title: "Aquatein",
+        slug: "aquatein",
+        description: "Positioning India's first Protein Water as a modern functional beverage brand through strategic brand building and growth advisory.",
+        engagement: "Strategic Advisory + Brand Building",
+        category: "Health • Nutrition",
+        scope: "Brand strategy & growth advisory",
+        services: [
+            "Capital",
+            "Strategy",
+            "Brand",
+        ],
+        detailHeading: "Building the future of functional hydration.",
+        descArray: [
+            "Aquatein pioneered India's Protein Water category by making protein consumption simpler, lighter and more convenient for modern lifestyles.",
+            "Our engagement focuses on strengthening the brand's positioning, sharpening its market narrative and creating a scalable identity that resonates with health-conscious consumers seeking functional nutrition.",
+            "Beyond product innovation, our strategic advisory supports long-term brand growth, helping Aquatein build awareness, expand market presence and establish itself as a category-defining leader in functional hydration."
+        ],
+        image: "/images/work/Aquatein.jpeg",
+        classname: "bg-[#000000]",
+    },
     {
         id: 5,
         title: "Flaunt Your Ink",
