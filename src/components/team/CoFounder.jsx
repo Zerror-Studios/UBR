@@ -24,7 +24,7 @@ const CoFounders = () => {
                     <div className="space-y-1">
                         <h4 className='  md:font-semibold leading-none'>Binoy Khimji</h4>
                         <h6 className=''>Co-founder • UBR</h6>
-                        <p className='leading-tight  w-full opacity-80 max-sm:mt-4 md:w-[90%] mt-5'>Brings disciplined capital, enterprise scaling, and a proven playbook for turning revenue into profit. The P&L rigour and governance side of the model, anchored by the Cornerstone ecosystem.</p>
+                        <p className='leading-tight  w-full opacity-80 max-sm:mt-4 md:w-[90%] mt-5'>Brings disciplined capital, enterprise scaling, and a proven playbook for turning revenue into profit. Brings P&L rigour, strong governance, and the operational discipline required to scale businesses.</p>
                     </div>
                 </div>
                 <div className=" w-[80vw] md:w-full shrink-0 space-y-4">

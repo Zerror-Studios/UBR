@@ -13,7 +13,7 @@ const modelCards = [
         brand: "UBR Brings",
         logo: "/images/logo-ubrxdisrptve.png",
         title: "The Capital And The Muscle.",
-        desc: "A capital and operating advisory founded by Binoy Khimji. Institutional capital access, multiple consumer ventures built and scaled, and deep distribution intelligence across India. Anchored in the Cornerstone Group ecosystem.",
+        desc: "A capital and operating advisory founded by Binoy Khimji. Institutional capital access, multiple consumer ventures built and scaled, and deep distribution intelligence across India.",
         img: "/images/home/ubr_bg.png",
         tags: [
             {
